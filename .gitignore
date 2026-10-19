@@ -1,0 +1,50 @@
+# OS / editor
+.DS_Store
+.env
+
+# Python build / caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+
+# Test / coverage / linters
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Scratch / drafts / planning
+.local/
+tmp/
+PLAN.md
+
+# uv package manager is banned; any accidental uv.lock must not be tracked.
+uv.lock
+
+# Pre-extracted procedure plaintext (per user spec: skip extraction when present)
+corpus/extracted/*
+!corpus/extracted/.gitkeep
+!corpus/extracted/README.md
+
+# Round-trip generated artifacts (regenerable from extracted/ via `e2e run`).
+# AST_1, compiled procedure text, and AST_2 are persisted per DOI here for
+# auditability but not tracked — they're cache, like corpus/extracted/.
+corpus/generated/*
+!corpus/generated/README.md
+
+# Classification work queue, results, and per-DOI prompt files
+# (written by `e2e classify-prepare` / `next-batch` / `ingest-batch`).
+corpus/work/*
+!corpus/work/README.md
+
+# Per-user Claude Code permissions
+.claude/settings.local.json
+.venv-fresh/

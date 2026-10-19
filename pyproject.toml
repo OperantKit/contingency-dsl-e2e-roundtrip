@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "contingency-dsl-e2e-roundtrip"
+version = "0.1.0a0"
+description = "End-to-end roundtrip harness: paper -> reader -> DSL -> paper compiler -> paper, per procedure type."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "contingency-procedure2dsl @ {root:uri}/../contingency-procedure2dsl",
+    "contingency-dsl2procedure @ {root:uri}/../contingency-dsl2procedure",
+    "contingency-dsl-py @ {root:uri}/../contingency-dsl-py",
+    "pyyaml>=6",
+    "pypdf>=4",
+    "pymupdf>=1.24",
+]
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.40"]
+test = ["pytest>=8"]
+
+[project.scripts]
+e2e = "contingency_dsl_e2e_roundtrip.cli:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/contingency_dsl_e2e_roundtrip"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
