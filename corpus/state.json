@@ -26,13 +26,13 @@
         "respondent/pair"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
-        "c_text_similarity": 0.025819265143992055,
+        "c_text_similarity": 0.03270564915758176,
         "d_notation_equiv": false,
         "doi": "10.1002/jaba.226",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1002/jaba.253": {
@@ -1848,7 +1848,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.01366120218579235,
+        "c_text_similarity": 0.018165304268846504,
         "d_notation_equiv": false,
         "doi": "10.1016/S0376-6357_98_00056-4",
         "error": null,
@@ -2062,13 +2062,13 @@
         "composed/pit"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
         "c_text_similarity": 0.027477102414654453,
         "d_notation_equiv": false,
         "doi": "10.1016/j.beproc.2004.01.009",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1016/j.beproc.2004.08.006": {
@@ -2645,7 +2645,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0325,
+        "c_text_similarity": 0.04197530864197531,
         "d_notation_equiv": true,
         "doi": "10.1016/s0091-3057_00_00184-2",
         "error": null,
@@ -2973,7 +2973,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.03524229074889868,
+        "c_text_similarity": 0.04057017543859649,
         "d_notation_equiv": false,
         "doi": "10.1037/0735-7036.102.2.160",
         "error": null,
@@ -3633,7 +3633,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0011305822498586771,
+        "c_text_similarity": 0.004603580562659846,
         "d_notation_equiv": true,
         "doi": "10.1109/te.1959.4322064",
         "error": null,
@@ -3856,13 +3856,13 @@
         "experiment/shaping"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
         "c_text_similarity": 0.003878116343490305,
         "d_notation_equiv": false,
         "doi": "10.1177/0145445501255003",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1177/0145445503251605": {
@@ -3990,7 +3990,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.017341040462427744,
+        "c_text_similarity": 0.04219409282700422,
         "d_notation_equiv": true,
         "doi": "10.1901/JEAB.1962.5-167",
         "error": null,
@@ -4039,7 +4039,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0,
+        "c_text_similarity": 0.011494252873563218,
         "d_notation_equiv": true,
         "doi": "10.1901/jaba.1968.1-121",
         "error": null,
@@ -4172,7 +4172,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0024509803921568627,
+        "c_text_similarity": 0.015748031496062992,
         "d_notation_equiv": true,
         "doi": "10.1901/jaba.1991.24-45",
         "error": null,
@@ -4201,7 +4201,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.00909090909090909,
+        "c_text_similarity": 0.01710376282782212,
         "d_notation_equiv": true,
         "doi": "10.1901/jaba.1992.25-143",
         "error": null,
@@ -4231,7 +4231,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0,
+        "c_text_similarity": 0.010948905109489052,
         "d_notation_equiv": true,
         "doi": "10.1901/jaba.1993.26-183",
         "error": null,
@@ -4318,7 +4318,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0008417508417508417,
+        "c_text_similarity": 0.01557935735150925,
         "d_notation_equiv": true,
         "doi": "10.1901/jaba.1995.28-245",
         "error": null,
@@ -4344,7 +4344,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.016556291390728478,
+        "c_text_similarity": 0.022727272727272728,
         "d_notation_equiv": true,
         "doi": "10.1901/jaba.1995.28-61",
         "error": null,
@@ -4787,13 +4787,13 @@
         "respondent/pair"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
-        "c_text_similarity": 0.0,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.02895752895752896,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1958.1-103",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1901/jeab.1958.1-109": {
@@ -4833,8 +4833,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.007407407407407408,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.010999083409715857,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1958.1-123",
         "error": null,
         "ok": true
@@ -4909,13 +4909,13 @@
         "operant/modifier"
       ],
       "roundtrip": {
-        "a_ast_equiv": false,
-        "b_reparseable": null,
-        "c_text_similarity": null,
-        "d_notation_equiv": false,
+        "a_ast_equiv": true,
+        "b_reparseable": true,
+        "c_text_similarity": 0.01808785529715762,
+        "d_notation_equiv": true,
         "doi": "10.1901/jeab.1958.1-163",
-        "error": "reader(T) returned no AST",
-        "ok": false
+        "error": null,
+        "ok": true
       }
     },
     "10.1901/jeab.1958.1-167": {
@@ -4937,7 +4937,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0058823529411764705,
+        "c_text_similarity": 0.015841584158415842,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1958.1-167",
         "error": null,
@@ -4963,7 +4963,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.005063291139240506,
+        "c_text_similarity": 0.008347245409015025,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1958.1-173",
         "error": null,
@@ -4987,7 +4987,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0047011417058428475,
+        "c_text_similarity": 0.016901408450704224,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1958.1-183",
         "error": null,
@@ -5093,7 +5093,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.008097165991902834,
+        "c_text_similarity": 0.017027863777089782,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1958.1-281",
         "error": null,
@@ -5139,7 +5139,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0,
+        "c_text_similarity": 0.006968641114982578,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1958.1-301",
         "error": null,
@@ -5226,13 +5226,13 @@
         "operant/reinforcement_delay"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
         "c_text_similarity": 0.01791044776119403,
         "d_notation_equiv": false,
         "doi": "10.1901/jeab.1958.1-359",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1901/jeab.1958.1-365": {
@@ -5251,8 +5251,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.03571428571428571,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1958.1-365",
         "error": null,
         "ok": true
@@ -5311,7 +5311,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0030303030303030303,
+        "c_text_similarity": 0.009708737864077669,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1958.1-69",
         "error": null,
@@ -5337,8 +5337,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.016417910447761194,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.023148148148148147,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1958.1-73",
         "error": null,
         "ok": true
@@ -5404,7 +5404,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0024489795918367346,
+        "c_text_similarity": 0.0071174377224199285,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1960.3-123",
         "error": null,
@@ -5469,7 +5469,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.019867549668874173,
+        "c_text_similarity": 0.026350461133069828,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1961.4-57",
         "error": null,
@@ -5490,7 +5490,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.017341040462427744,
+        "c_text_similarity": 0.04219409282700422,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1962.5-167",
         "error": null,
@@ -5514,7 +5514,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.013245033112582781,
+        "c_text_similarity": 0.032388663967611336,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1962.5-383",
         "error": null,
@@ -5565,7 +5565,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.02254428341384863,
+        "c_text_similarity": 0.03205128205128205,
         "d_notation_equiv": false,
         "doi": "10.1901/jeab.1963.6-1",
         "error": null,
@@ -5633,13 +5633,13 @@
         "operant/program"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
-        "c_text_similarity": 0.025362318840579712,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.06896551724137931,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1963.6-437",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1901/jeab.1964.7-27": {
@@ -5820,8 +5820,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.037209302325581395,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.09152542372881356,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1966.9-475",
         "error": null,
         "ok": true
@@ -5891,8 +5891,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.048458149779735685,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.08841463414634146,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1967.10-517",
         "error": null,
         "ok": true
@@ -5982,8 +5982,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.04040404040404041,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.05603448275862069,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1968.11-405",
         "error": null,
         "ok": true
@@ -6006,7 +6006,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.043478260869565216,
+        "c_text_similarity": 0.05394190871369295,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1968.11-579",
         "error": null,
@@ -6229,8 +6229,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.012168141592920354,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.0316622691292876,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1970.13-187",
         "error": null,
         "ok": true
@@ -6253,7 +6253,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0437375745526839,
+        "c_text_similarity": 0.05533596837944664,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1970.13-221",
         "error": null,
@@ -6280,13 +6280,13 @@
         "annotations/procedure-temporal"
       ],
       "roundtrip": {
-        "a_ast_equiv": false,
+        "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.004742145820983995,
-        "d_notation_equiv": false,
+        "c_text_similarity": 0.008027522935779817,
+        "d_notation_equiv": true,
         "doi": "10.1901/jeab.1970.13-243",
         "error": null,
-        "ok": false
+        "ok": true
       }
     },
     "10.1901/jeab.1970.13-291": {
@@ -6337,7 +6337,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.07166123778501629,
+        "c_text_similarity": 0.09032258064516129,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1970.14-345",
         "error": null,
@@ -6396,7 +6396,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.009433962264150943,
+        "c_text_similarity": 0.0472972972972973,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1971.16-249",
         "error": null,
@@ -6492,8 +6492,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.02464788732394366,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.07861635220125786,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1972.17-59",
         "error": null,
         "ok": true
@@ -6611,7 +6611,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.007792207792207792,
+        "c_text_similarity": 0.023668639053254437,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1973.20-355",
         "error": null,
@@ -6640,7 +6640,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.021367521367521368,
+        "c_text_similarity": 0.06086956521739131,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1973.20-447",
         "error": null,
@@ -6740,8 +6740,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.012738853503184714,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.052,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1974.21-511",
         "error": null,
         "ok": true
@@ -6763,7 +6763,16 @@
         "annotations/subjects",
         "experiment/phase",
         "experiment/paper"
-      ]
+      ],
+      "roundtrip": {
+        "a_ast_equiv": true,
+        "b_reparseable": true,
+        "c_text_similarity": 0.013311148086522463,
+        "d_notation_equiv": true,
+        "doi": "10.1901/jeab.1974.22-231",
+        "error": null,
+        "ok": true
+      }
     },
     "10.1901/jeab.1974.22-301": {
       "classified_with": "haiku",
@@ -6808,7 +6817,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.012903225806451613,
+        "c_text_similarity": 0.02763819095477387,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1974.22-31",
         "error": null,
@@ -6834,8 +6843,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.018867924528301886,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.056,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1974.22-561",
         "error": null,
         "ok": true
@@ -6856,8 +6865,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.017045454545454544,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.08171206225680934,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1975.24-107",
         "error": null,
         "ok": true
@@ -6928,7 +6937,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.022058823529411766,
+        "c_text_similarity": 0.06077348066298342,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1976.25-157",
         "error": null,
@@ -6954,8 +6963,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.01327433628318584,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.09558823529411764,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1976.26-441",
         "error": null,
         "ok": true
@@ -6983,7 +6992,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.014124293785310734,
+        "c_text_similarity": 0.054404145077720206,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1976.26-505",
         "error": null,
@@ -7007,7 +7016,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0113314447592068,
+        "c_text_similarity": 0.02252252252252252,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1977.27-183",
         "error": null,
@@ -7051,7 +7060,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.010615711252653927,
+        "c_text_similarity": 0.04460966542750929,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1978.29-431",
         "error": null,
@@ -7127,7 +7136,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.011594202898550725,
+        "c_text_similarity": 0.08860759493670886,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1979.31-71",
         "error": null,
@@ -7194,13 +7203,13 @@
         "operant/timeout"
       ],
       "roundtrip": {
-        "a_ast_equiv": false,
+        "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.021148036253776436,
+        "c_text_similarity": 0.06666666666666667,
         "d_notation_equiv": false,
         "doi": "10.1901/jeab.1979.32-399",
         "error": null,
-        "ok": false
+        "ok": true
       }
     },
     "10.1901/jeab.1979.32-457": {
@@ -7228,7 +7237,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.013559322033898305,
+        "c_text_similarity": 0.04087193460490463,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1979.32-65",
         "error": null,
@@ -7253,7 +7262,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.009478672985781991,
+        "c_text_similarity": 0.03666666666666667,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1980.33-213",
         "error": null,
@@ -7412,13 +7421,13 @@
         "operant/program"
       ],
       "roundtrip": {
-        "a_ast_equiv": false,
-        "b_reparseable": null,
-        "c_text_similarity": null,
-        "d_notation_equiv": false,
+        "a_ast_equiv": true,
+        "b_reparseable": true,
+        "c_text_similarity": 0.03896103896103896,
+        "d_notation_equiv": true,
         "doi": "10.1901/jeab.1982.37-243",
-        "error": "reader(T) returned no AST",
-        "ok": false
+        "error": null,
+        "ok": true
       }
     },
     "10.1901/jeab.1982.37-5": {
@@ -7555,7 +7564,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.006092254134029591,
+        "c_text_similarity": 0.014111006585136407,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1983.40-253",
         "error": null,
@@ -7744,7 +7753,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.027707808564231738,
+        "c_text_similarity": 0.034739454094292806,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1986.46-149",
         "error": null,
@@ -7764,7 +7773,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.02598870056497175,
+        "c_text_similarity": 0.031496062992125984,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1986.46-185",
         "error": null,
@@ -7788,13 +7797,13 @@
         "annotations/apparatus"
       ],
       "roundtrip": {
-        "a_ast_equiv": false,
+        "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0029967036260113876,
+        "c_text_similarity": 0.007413509060955519,
         "d_notation_equiv": false,
         "doi": "10.1901/jeab.1986.46-219",
         "error": null,
-        "ok": false
+        "ok": true
       }
     },
     "10.1901/jeab.1986.46-363": {
@@ -7813,7 +7822,7 @@
       "roundtrip": {
         "a_ast_equiv": false,
         "b_reparseable": true,
-        "c_text_similarity": 0.02662993572084481,
+        "c_text_similarity": 0.031135531135531136,
         "d_notation_equiv": false,
         "doi": "10.1901/jeab.1986.46-363",
         "error": null,
@@ -7845,8 +7854,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0031645569620253164,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.05925925925925926,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1987.47-5",
         "error": null,
         "ok": true
@@ -7871,7 +7880,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.038011695906432746,
+        "c_text_similarity": 0.0651685393258427,
         "d_notation_equiv": false,
         "doi": "10.1901/jeab.1987.48-395",
         "error": null,
@@ -7948,7 +7957,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.002932551319648094,
+        "c_text_similarity": 0.01092896174863388,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1989.51-17",
         "error": null,
@@ -7980,7 +7989,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0,
+        "c_text_similarity": 0.024539877300613498,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1989.52-155",
         "error": null,
@@ -8081,7 +8090,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.009375,
+        "c_text_similarity": 0.056022408963585436,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1991.55-47",
         "error": null,
@@ -8167,13 +8176,13 @@
         "experiment/phase"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
-        "c_text_similarity": 0.00396235760277365,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.0107095046854083,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1992.57-301",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1901/jeab.1992.57-317": {
@@ -8267,7 +8276,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.006134969325153374,
+        "c_text_similarity": 0.027711797307996833,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1993.59-373",
         "error": null,
@@ -8338,13 +8347,13 @@
         "annotations/procedure-context"
       ],
       "roundtrip": {
-        "a_ast_equiv": true,
+        "a_ast_equiv": false,
         "b_reparseable": true,
-        "c_text_similarity": 0.0037159372419488025,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.011140235910878113,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1993.60-361",
         "error": null,
-        "ok": true
+        "ok": false
       }
     },
     "10.1901/jeab.1993.60-529": {
@@ -8388,8 +8397,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.004739336492890996,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.09748427672955975,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1994.61-505",
         "error": null,
         "ok": true
@@ -8413,7 +8422,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.03169014084507042,
+        "c_text_similarity": 0.07246376811594203,
         "d_notation_equiv": false,
         "doi": "10.1901/jeab.1994.61-97",
         "error": null,
@@ -8437,7 +8446,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.038461538461538464,
+        "c_text_similarity": 0.051630434782608696,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1995.63-1",
         "error": null,
@@ -8482,7 +8491,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0,
+        "c_text_similarity": 0.057971014492753624,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.1995.63-71",
         "error": null,
@@ -8517,8 +8526,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.0004092769440654843,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.003242924528301887,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1996.65-185",
         "error": null,
         "ok": true
@@ -8544,8 +8553,8 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.00532724505327245,
-        "d_notation_equiv": true,
+        "c_text_similarity": 0.039177277179236046,
+        "d_notation_equiv": false,
         "doi": "10.1901/jeab.1996.65-513",
         "error": null,
         "ok": true
@@ -9209,7 +9218,7 @@
         "a_ast_equiv": true,
         "b_reparseable": true,
         "c_text_similarity": 0.03305785123966942,
-        "d_notation_equiv": false,
+        "d_notation_equiv": true,
         "doi": "10.1901/jeab.2005.71-04",
         "error": null,
         "ok": true
@@ -9230,7 +9239,7 @@
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
-        "c_text_similarity": 0.049132947976878616,
+        "c_text_similarity": 0.06303724928366762,
         "d_notation_equiv": true,
         "doi": "10.1901/jeab.2005.83-04",
         "error": null,

@@ -2,11 +2,11 @@
 
 Procedure source: `pair.json`  
 Total papers classified: **22**  
-Passing: **17**
+Passing: **16**
 
 ## DOIs
 
-- [x] `10.1002/jaba.226` — PASS (a:✓ b:✓ c:0.03 d:✗)
+- [ ] `10.1002/jaba.226` — FAIL (a:✗ b:✓ c:0.03 d:✗)
 - [x] `10.1002/jeab.655` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.1002/jeab.659` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [x] `10.1016/j.beproc.2019.01.013` — PASS (a:✓ b:✓ c:0.01 d:✗)
@@ -21,10 +21,10 @@ Passing: **17**
 - [x] `10.1101/lm.025668.112` — PASS (a:✓ b:✓ c:0.01 d:✗)
 - [ ] `10.1111/j.2044-8295.1958.tb00658.x` — FAIL (a:✗ b:✓ c:0.01 d:✗)
 - [x] `10.1371/journal.pone.0000529` — PASS (a:✓ b:✓ c:0.01 d:✓)
-- [x] `10.1901/jeab.1958.1-103` — PASS (a:✓ b:✓ c:0.00 d:✓)
+- [ ] `10.1901/jeab.1958.1-103` — FAIL (a:✗ b:✓ c:0.03 d:✗)
 - [ ] `10.1901/jeab.1968.11-1` — FAIL (a:✗ b:✓ c:0.01 d:✗)
-- [x] `10.1901/jeab.1968.11-405` — PASS (a:✓ b:✓ c:0.04 d:✓)
-- [ ] `10.1901/jeab.1986.46-219` — FAIL (a:✗ b:✓ c:0.00 d:✗)
+- [x] `10.1901/jeab.1968.11-405` — PASS (a:✓ b:✓ c:0.06 d:✗)
+- [x] `10.1901/jeab.1986.46-219` — PASS (a:✓ b:✓ c:0.01 d:✗)
 - [x] `10.3758/bf03204606` — PASS (a:✓ b:✓ c:0.01 d:✗)
 - [x] `10.3758/bf03209575` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [ ] `10.3758/bf03342209` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)

@@ -2,7 +2,7 @@
 
 Procedure source: `contingency-controls.json`  
 Total papers classified: **11**  
-Passing: **9**
+Passing: **8**
 
 ## DOIs
 
@@ -14,6 +14,6 @@ Passing: **9**
 - [x] `10.1037/0003-066X.43.3.151` — PASS (a:✓ b:✓ c:0.00 d:✓)
 - [x] `10.1037/h0025984` — PASS (a:✓ b:✓ c:0.02 d:✗)
 - [x] `10.1371/journal.pone.0000529` — PASS (a:✓ b:✓ c:0.01 d:✓)
-- [x] `10.1901/jeab.1958.1-103` — PASS (a:✓ b:✓ c:0.00 d:✓)
-- [x] `10.1901/jeab.1968.11-405` — PASS (a:✓ b:✓ c:0.04 d:✓)
+- [ ] `10.1901/jeab.1958.1-103` — FAIL (a:✗ b:✓ c:0.03 d:✗)
+- [x] `10.1901/jeab.1968.11-405` — PASS (a:✓ b:✓ c:0.06 d:✗)
 - [x] `10.1901/jeab.1969.12-511` — PASS (a:✓ b:✓ c:0.07 d:✓)
