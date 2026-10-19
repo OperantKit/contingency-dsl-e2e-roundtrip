@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: "contingency-dsl-e2e-roundtrip"
+authors:
+  - family-names: "Mizutani"
+    given-names: "Yuto"
+repository-code: "https://github.com/OperantKit/contingency-dsl-e2e-roundtrip"
+license: MIT
+abstract: "End-to-end round-trip harness for contingency-dsl: paper Method text -> DSL AST -> generated Method text -> DSL AST, judged per paper and grouped by procedure type."

@@ -66,27 +66,74 @@ round-trip result is silently lost.
 Procedure plain text is cached under `corpus/extracted/<doi-slug>.txt`.
 This directory is **gitignored**. If a file exists, extraction is skipped.
 
-Fallback order when the cache is missing:
+Fallback order when the cache is missing. Steps 2–4 are used only when
+`E2E_PAPER_SOURCES_ROOT` points at a directory of your own paper sources:
 
 1. `corpus/extracted/<doi-slug>.txt` (this project)
-2. Whole-paper markdown available via the sibling extraction pipeline —
-   slice the Method section from it
-3. Raw PDF available via the sibling extraction pipeline — slice the
-   Method section
-4. Paper front-matter notes + procedure section from the sibling notes
-   corpus
+2. `$E2E_PAPER_SOURCES_ROOT/reference/papers/extracted/<doi-slug>.md`
+   (whole-paper markdown) — slice the Method section from it
+3. `$E2E_PAPER_SOURCES_ROOT/reference/papers/pdf/<doi-slug>.pdf` (raw PDF)
+   — slice the Method section
+4. `$E2E_PAPER_SOURCES_ROOT/notes/papers/*.md` (notes with a `doi:`
+   front-matter field) — use the procedure section
 
 `<doi-slug> = doi.replace("/", "_")`.
 
 ## Setup
 
+The harness reads the procedure taxonomy from the
+[contingency-dsl](https://github.com/OperantKit/contingency-dsl)
+conformance tree, so clone it as well and point `E2E_CONFORMANCE_ROOT` at
+its `conformance/` directory:
+
 ```bash
-mise install
-mise exec -- python -m venv .venv
-mise exec -- .venv/bin/python -m pip install -e .
-# Optional: Anthropic SDK backend (requires ANTHROPIC_API_KEY)
-mise exec -- .venv/bin/python -m pip install -e '.[llm,test]'
+git clone https://github.com/OperantKit/contingency-dsl-e2e-roundtrip
+git clone https://github.com/OperantKit/contingency-dsl
+cd contingency-dsl-e2e-roundtrip
+python -m venv .venv
+.venv/bin/python -m pip install -e '.[test]'
+# Optional: Anthropic SDK classification backend (requires ANTHROPIC_API_KEY)
+.venv/bin/python -m pip install -e '.[llm]'
+
+export E2E_CONFORMANCE_ROOT="$PWD/../contingency-dsl/conformance"  # required
+.venv/bin/python -m pytest -q
 ```
+
+`pip` installs contingency-dsl-py from PyPI and contingency-procedure2dsl /
+contingency-dsl2procedure from their GitHub tags, so no other checkout is
+needed. Python 3.11 or later.
+
+| Variable                 | Required | Meaning                                                                 |
+|--------------------------|----------|-------------------------------------------------------------------------|
+| `E2E_CONFORMANCE_ROOT`   | yes      | Path to `contingency-dsl/conformance`. A sibling `../contingency-dsl/conformance` next to this checkout is used when it is unset. |
+| `E2E_PAPER_SOURCES_ROOT` | no       | Your own paper notes / markdown / PDFs, used as extraction fallbacks 2–4 above. Unset = only `corpus/extracted/` is read. |
+| `E2E_CLASSIFIER_BACKEND` | no       | Force `anthropic` or `claude-cli` (see below).                          |
+
+The paper texts behind `corpus/state.json` are not distributed;
+`corpus/extracted/` starts empty in a fresh clone. Supply Method text
+yourself as shown in the next section.
+
+## 30-second example
+
+Round-trip one Method passage. Write the text to the extraction cache
+under a DOI of your choice (here a placeholder DOI in a scratch corpus, so
+the tracked `corpus/state.json` is left untouched), then run it:
+
+```bash
+mkdir -p demo/corpus/extracted
+cat > demo/corpus/extracted/10.0000_demo.txt <<'EOF'
+Procedure
+Lever presses were reinforced under a fixed-ratio 5 schedule: every fifth response produced a food pellet. Sessions were conducted daily and ended after 60 reinforcers or 60 min, whichever came first. Training continued until response rates were stable across five consecutive sessions.
+EOF
+.venv/bin/e2e --corpus demo/corpus run --doi 10.0000/demo
+# [PASS] 10.0000/demo: a=True b=True c=0.2 d=True
+cat demo/corpus/generated/dsl/10.0000_demo.dsl        # FR5
+cat demo/corpus/generated/compiled/10.0000_demo.txt   # Responses were reinforced under a fixed-ratio (FR) 5 schedule.
+```
+
+The cached text must contain at least 200 characters of prose; shorter
+files are treated as empty templates and discarded. `run` needs no LLM:
+the classification step (`classify`) is the only one that calls a model.
 
 ### Classification backends
 

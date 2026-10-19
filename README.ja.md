@@ -65,24 +65,72 @@ Paper ノード等）はコメント付き JSON フォールバックで書き�
 手続きプレーンテキストは `corpus/extracted/<doi-slug>.txt` にキャッシュされる。
 このディレクトリは **gitignore されている**。ファイルが存在すれば抽出は skip される。
 
-キャッシュが無い場合のフォールバック順：
+キャッシュが無い場合のフォールバック順。2〜4 は `E2E_PAPER_SOURCES_ROOT` が
+手元の論文ソースのディレクトリを指しているときだけ使われる：
 
 1. `corpus/extracted/<doi-slug>.txt`（このプロジェクト）
-2. 兄弟抽出パイプライン経由で入手可能な論文全体 markdown — Method 節をスライス
-3. 兄弟抽出パイプライン経由で入手可能な生 PDF — Method 節をスライス
-4. 兄弟ノート corpus の論文 front-matter + 手続き section
+2. `$E2E_PAPER_SOURCES_ROOT/reference/papers/extracted/<doi-slug>.md`
+   （論文全体の markdown）— Method 節をスライス
+3. `$E2E_PAPER_SOURCES_ROOT/reference/papers/pdf/<doi-slug>.pdf`（生 PDF）
+   — Method 節をスライス
+4. `$E2E_PAPER_SOURCES_ROOT/notes/papers/*.md`（front-matter に `doi:` を
+   持つノート）— 手続き section を使う
 
 `<doi-slug> = doi.replace("/", "_")`。
 
 ## セットアップ
 
+手続きの分類体系は
+[contingency-dsl](https://github.com/OperantKit/contingency-dsl) の
+conformance ツリーから読むため、これも clone して `E2E_CONFORMANCE_ROOT` を
+その `conformance/` ディレクトリに向ける：
+
 ```bash
-mise install
-mise exec -- python -m venv .venv
-mise exec -- .venv/bin/python -m pip install -e .
-# 任意: Anthropic SDK バックエンド（ANTHROPIC_API_KEY が必要）
-mise exec -- .venv/bin/python -m pip install -e '.[llm,test]'
+git clone https://github.com/OperantKit/contingency-dsl-e2e-roundtrip
+git clone https://github.com/OperantKit/contingency-dsl
+cd contingency-dsl-e2e-roundtrip
+python -m venv .venv
+.venv/bin/python -m pip install -e '.[test]'
+# 任意: Anthropic SDK の分類バックエンド（ANTHROPIC_API_KEY が必要）
+.venv/bin/python -m pip install -e '.[llm]'
+
+export E2E_CONFORMANCE_ROOT="$PWD/../contingency-dsl/conformance"  # 必須
+.venv/bin/python -m pytest -q
 ```
+
+`pip` が contingency-dsl-py を PyPI から、contingency-procedure2dsl /
+contingency-dsl2procedure を GitHub のタグから入れるので、ほかの checkout は
+要らない。Python 3.11 以上。
+
+| 環境変数                 | 必須   | 意味                                                                    |
+|--------------------------|--------|-------------------------------------------------------------------------|
+| `E2E_CONFORMANCE_ROOT`   | はい   | `contingency-dsl/conformance` のパス。未設定なら、この checkout の隣の `../contingency-dsl/conformance` を使う。 |
+| `E2E_PAPER_SOURCES_ROOT` | いいえ | 手元の論文ノート・markdown・PDF。上の抽出フォールバック 2〜4 に使う。未設定なら `corpus/extracted/` だけを読む。 |
+| `E2E_CLASSIFIER_BACKEND` | いいえ | `anthropic` か `claude-cli` を強制する（下記）。                         |
+
+`corpus/state.json` の元になった論文本文は配布しない。clone 直後の
+`corpus/extracted/` は空なので、Method の本文は次節のように自分で置く。
+
+## 30 秒の例
+
+Method の 1 段落をラウンドトリップする。任意の DOI で本文を抽出キャッシュに
+書き（ここでは作業用 corpus に仮の DOI で置き、tracked な
+`corpus/state.json` は変えない）、実行する：
+
+```bash
+mkdir -p demo/corpus/extracted
+cat > demo/corpus/extracted/10.0000_demo.txt <<'EOF'
+Procedure
+Lever presses were reinforced under a fixed-ratio 5 schedule: every fifth response produced a food pellet. Sessions were conducted daily and ended after 60 reinforcers or 60 min, whichever came first. Training continued until response rates were stable across five consecutive sessions.
+EOF
+.venv/bin/e2e --corpus demo/corpus run --doi 10.0000/demo
+# [PASS] 10.0000/demo: a=True b=True c=0.2 d=True
+cat demo/corpus/generated/dsl/10.0000_demo.dsl        # FR5
+cat demo/corpus/generated/compiled/10.0000_demo.txt   # Responses were reinforced under a fixed-ratio (FR) 5 schedule.
+```
+
+キャッシュの本文は 200 字以上の散文が要る。短いファイルは空の雛形とみなされて
+捨てられる。`run` は LLM を使わない（モデルを呼ぶのは分類 `classify` だけ）。
 
 ### 分類バックエンド
 

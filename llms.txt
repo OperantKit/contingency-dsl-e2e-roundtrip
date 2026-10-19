@@ -1,0 +1,41 @@
+# contingency-dsl-e2e-roundtrip
+
+> Round-trip harness for behavior-analytic Method sections: reads a paper's Method text into a contingency-dsl schedule AST (contingency-procedure2dsl), compiles that AST back into Method prose (contingency-dsl2procedure), reads the prose again, and records whether the two ASTs agree. Results are kept per DOI in `corpus/state.json` and rendered as one checklist per procedure type.
+
+contingency-dsl-e2e-roundtrip is part of OperantKit, a set of Python/Rust packages for designing and running operant and respondent conditioning experiments (reinforcement schedules, session recording, analysis). Use it to measure how much of a published corpus the reader and the compiler cover, and to find the papers where they disagree, instead of spot-checking Method sections by hand. Four judgements per paper: (a) AST semantic equivalence (the PASS criterion), (b) reparseability of the generated text, (c) word-level Jaccard similarity to the original text (reported only), (d) canonical-JSON equality of the two ASTs.
+
+## Install
+
+```bash
+git clone https://github.com/OperantKit/contingency-dsl-e2e-roundtrip
+git clone https://github.com/OperantKit/contingency-dsl
+cd contingency-dsl-e2e-roundtrip
+python -m venv .venv && .venv/bin/python -m pip install -e '.[test]'
+export E2E_CONFORMANCE_ROOT="$PWD/../contingency-dsl/conformance"
+```
+
+## Minimal example
+
+```bash
+mkdir -p demo/corpus/extracted
+cat > demo/corpus/extracted/10.0000_demo.txt <<'EOF'
+Procedure
+Lever presses were reinforced under a fixed-ratio 5 schedule: every fifth response produced a food pellet. Sessions were conducted daily and ended after 60 reinforcers or 60 min, whichever came first. Training continued until response rates were stable across five consecutive sessions.
+EOF
+.venv/bin/e2e --corpus demo/corpus run --doi 10.0000/demo
+# [PASS] 10.0000/demo: a=True b=True c=0.2 d=True
+```
+
+The round trip itself is rule-based and needs no API key. Only `e2e classify` (assigning procedure types to papers) calls an LLM, through the Anthropic SDK or the `claude` CLI. Paper texts are not distributed; supply Method text in `corpus/extracted/<doi-slug>.txt` or set `E2E_PAPER_SOURCES_ROOT` to your own notes, markdown, and PDFs.
+
+## Docs
+
+- [README](https://github.com/OperantKit/contingency-dsl-e2e-roundtrip/blob/main/README.md): setup, environment variables, CLI, classification with a Claude Code subagent
+- [AGENTS.md](https://github.com/OperantKit/contingency-dsl-e2e-roundtrip/blob/main/AGENTS.md): when to use this package and what not to do
+
+## Related packages
+
+- [contingency-dsl](https://github.com/OperantKit/contingency-dsl): the schedule language specification; its `conformance/` tree defines the procedure types used here
+- [contingency-procedure2dsl](https://github.com/OperantKit/contingency-procedure2dsl): Method-section text to AST (the reader in this harness)
+- [contingency-dsl2procedure](https://github.com/OperantKit/contingency-dsl2procedure): AST to Method-section text (the compiler in this harness)
+- [contingency-dsl-py](https://github.com/OperantKit/contingency-dsl-py): parses and renders DSL text (`pip install contingency-dsl-py`)
