@@ -1,8 +1,8 @@
 # operant/reinforcement_delay
 
 Procedure source: `reinforcement_delay.json`  
-Total papers classified: **75**  
-Passing: **62**
+Total papers classified: **72**  
+Passing: **61**
 
 ## DOIs
 
@@ -23,8 +23,8 @@ Passing: **62**
 - [x] `10.1016/j.beproc.2013.07.007` — PASS (a:✓ b:✓ c:0.00 d:✗)
 - [x] `10.1016/j.beproc.2016.01.010` — PASS (a:✓ b:✓ c:0.03 d:✗)
 - [x] `10.1016/s0376-6357_03_00018-4` — PASS (a:✓ b:✓ c:0.02 d:✓)
-- [x] `10.1037/0022-006X.49.4.526` — PASS (a:✓ b:✓ c:0.01 d:✓)
-- [x] `10.1037/0022-006X.55.1.3` — PASS (a:✓ b:✓ c:0.01 d:✓)
+- [x] `10.1037/0022-006x.49.4.526` — PASS (a:✓ b:✓ c:0.01 d:✓)
+- [x] `10.1037/0022-006x.55.1.3` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [ ] `10.1037/0033-2909.103.1.44` — FAIL (a:✗ b:✓ c:0.01 d:✗)
 - [x] `10.1037/13937-022` — PASS (a:✓ b:✓ c:0.00 d:✗)
 - [x] `10.1037/h0024818` — PASS (a:✓ b:✓ c:0.03 d:✓)
@@ -75,9 +75,6 @@ Passing: **62**
 - [x] `10.1901/jeab.2010.94-113` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [x] `10.1901/jeab.2010.94-209` — PASS (a:✓ b:✓ c:0.14 d:✗)
 - [x] `10.1901/jeab.2012.97-215` — PASS (a:✓ b:✓ c:0.05 d:✓)
-- [x] `10.3758/BF03204606` — PASS (a:✓ b:✓ c:0.01 d:✗)
-- [ ] `10.3758/BF03342209` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)
 - [x] `10.3758/bf03204606` — PASS (a:✓ b:✓ c:0.01 d:✗)
-- [ ] `10.3758/bf03213358` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)
 - [ ] `10.3758/bf03342209` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)
 - [x] `trujano/2015_rats-are-optimal-in-a` — PASS (a:✓ b:✓ c:0.03 d:✓)

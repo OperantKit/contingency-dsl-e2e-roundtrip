@@ -1,15 +1,15 @@
 # experiment/shaping
 
 Procedure source: `shaping.json`  
-Total papers classified: **60**  
-Passing: **53**
+Total papers classified: **57**  
+Passing: **50**
 
 ## DOIs
 
 - [x] `10.1002/jeab.103` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [ ] `10.1002/jeab.274` — FAIL (a:✗ b:✓ c:0.04 d:✗)
 - [x] `10.1016/j.beproc.2013.05.013` — PASS (a:✓ b:✓ c:0.01 d:✓)
-- [x] `10.1037/0022-006X.55.1.3` — PASS (a:✓ b:✓ c:0.01 d:✓)
+- [x] `10.1037/0022-006x.55.1.3` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.1109/te.1959.4322064` — PASS (a:✓ b:✓ c:0.00 d:✓)
 - [x] `10.1126/science.128.3330.969` — PASS (a:✓ b:✓ c:0.00 d:✓)
 - [x] `10.1142/s0219635212500057` — PASS (a:✓ b:✓ c:0.00 d:✓)
@@ -57,9 +57,6 @@ Passing: **53**
 - [x] `10.1901/jeab.2009.91-75` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [x] `10.1901/jeab.2009.92-413` — PASS (a:✓ b:✓ c:0.03 d:✓)
 - [x] `10.1901/jeab.2012.98-1` — PASS (a:✓ b:✓ c:0.03 d:✗)
-- [x] `10.3758/BF03195555` — PASS (a:✓ b:✓ c:0.01 d:✓)
-- [x] `10.3758/BF03204606` — PASS (a:✓ b:✓ c:0.01 d:✗)
-- [x] `10.3758/BF03209575` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.3758/bf03195555` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.3758/bf03204606` — PASS (a:✓ b:✓ c:0.01 d:✗)
 - [x] `10.3758/bf03209575` — PASS (a:✓ b:✓ c:0.01 d:✓)

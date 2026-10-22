@@ -1260,11 +1260,19 @@
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
-    "10.1007/BF02295996": {
+    "10.1007/b108413": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
-    "10.1007/BF03391874": {
+    "10.1007/bf02295996": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": []
+    },
+    "10.1007/bf03391780": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": []
+    },
+    "10.1007/bf03391874": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
         "operant/compound",
@@ -1280,54 +1288,6 @@
         "error": null,
         "ok": true
       }
-    },
-    "10.1007/BF03392077": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1007/BF03392108": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1007/BF03392204": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1007/BF03392236": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1007/BF03393175": {
-      "classified_with": "haiku",
-      "out_of_scope_reason": "Theoretical paper with illustrative schematic examples, not a report of an experimental procedure",
-      "procedures": []
-    },
-    "10.1007/BF03395710": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": false,
-        "b_reparseable": null,
-        "c_text_similarity": null,
-        "d_notation_equiv": false,
-        "doi": "10.1007/BF03395710",
-        "error": "reader(T) returned no AST",
-        "ok": false
-      }
-    },
-    "10.1007/b108413": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1007/bf02295996": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1007/bf03391780": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
     },
     "10.1007/bf03392000": {
       "classified_with": "haiku",
@@ -1371,6 +1331,14 @@
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
+    "10.1007/bf03392204": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": []
+    },
+    "10.1007/bf03392236": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": []
+    },
     "10.1007/bf03392457": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
@@ -1396,6 +1364,11 @@
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
+    "10.1007/bf03393175": {
+      "classified_with": "haiku",
+      "out_of_scope_reason": "Theoretical paper with illustrative schematic examples, not a report of an experimental procedure",
+      "procedures": []
+    },
     "10.1007/bf03394799": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
@@ -1418,7 +1391,18 @@
     },
     "10.1007/bf03395710": {
       "classified_with": "procedure-classifier-haiku",
-      "procedures": []
+      "procedures": [
+        "annotations/subjects"
+      ],
+      "roundtrip": {
+        "a_ast_equiv": false,
+        "b_reparseable": null,
+        "c_text_similarity": null,
+        "d_notation_equiv": false,
+        "doi": "10.1007/BF03395710",
+        "error": "reader(T) returned no AST",
+        "ok": false
+      }
     },
     "10.1007/bf03395811": {
       "classified_with": "procedure-classifier-haiku",
@@ -1813,98 +1797,6 @@
         "c_text_similarity": 0.04240282685512368,
         "d_notation_equiv": true,
         "doi": "10.1016/0376-6357_85_90117-2",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1016/S0376-6357_02_00025-6": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/measurement"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.005639097744360902,
-        "d_notation_equiv": true,
-        "doi": "10.1016/S0376-6357_02_00025-6",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1016/S0376-6357_98_00056-4": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-temporal",
-        "operant/atomic",
-        "operant/compound",
-        "operant/aversive"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.018165304268846504,
-        "d_notation_equiv": false,
-        "doi": "10.1016/S0376-6357_98_00056-4",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1016/S1077-7229(96)80036-8": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/measurement",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": false,
-        "b_reparseable": null,
-        "c_text_similarity": null,
-        "d_notation_equiv": false,
-        "doi": "10.1016/S1077-7229(96)80036-8",
-        "error": "reader(T) returned no AST",
-        "ok": false
-      }
-    },
-    "10.1016/S1077-7229_96_80036-8": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/measurement",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-trial-structure",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.00399800099950025,
-        "d_notation_equiv": true,
-        "doi": "10.1016/S1077-7229_96_80036-8",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1016/S2215-0366_17_30209-2": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/procedure-temporal",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.004524886877828055,
-        "d_notation_equiv": true,
-        "doi": "10.1016/S2215-0366_17_30209-2",
         "error": null,
         "ok": true
       }
@@ -2652,6 +2544,23 @@
         "ok": true
       }
     },
+    "10.1016/s0376-6357_02_00025-6": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": [
+        "annotations/subjects",
+        "annotations/apparatus",
+        "annotations/measurement"
+      ],
+      "roundtrip": {
+        "a_ast_equiv": true,
+        "b_reparseable": true,
+        "c_text_similarity": 0.005639097744360902,
+        "d_notation_equiv": true,
+        "doi": "10.1016/S0376-6357_02_00025-6",
+        "error": null,
+        "ok": true
+      }
+    },
     "10.1016/s0376-6357_03_00018-4": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
@@ -2702,6 +2611,27 @@
         "ok": false
       }
     },
+    "10.1016/s0376-6357_98_00056-4": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": [
+        "annotations/subjects",
+        "annotations/apparatus",
+        "annotations/procedure-stimulus",
+        "annotations/procedure-temporal",
+        "operant/atomic",
+        "operant/compound",
+        "operant/aversive"
+      ],
+      "roundtrip": {
+        "a_ast_equiv": true,
+        "b_reparseable": true,
+        "c_text_similarity": 0.018165304268846504,
+        "d_notation_equiv": false,
+        "doi": "10.1016/S0376-6357_98_00056-4",
+        "error": null,
+        "ok": true
+      }
+    },
     "10.1016/s1077-7229(96)80036-8": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
@@ -2720,7 +2650,43 @@
         "ok": false
       }
     },
-    "10.1017/S0140525X00002405": {
+    "10.1016/s1077-7229_96_80036-8": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": [
+        "annotations/subjects",
+        "annotations/measurement",
+        "annotations/procedure-stimulus",
+        "annotations/procedure-trial-structure",
+        "experiment/phase"
+      ],
+      "roundtrip": {
+        "a_ast_equiv": true,
+        "b_reparseable": true,
+        "c_text_similarity": 0.00399800099950025,
+        "d_notation_equiv": true,
+        "doi": "10.1016/S1077-7229_96_80036-8",
+        "error": null,
+        "ok": true
+      }
+    },
+    "10.1016/s2215-0366_17_30209-2": {
+      "classified_with": "procedure-classifier-haiku",
+      "procedures": [
+        "annotations/subjects",
+        "annotations/procedure-temporal",
+        "experiment/phase"
+      ],
+      "roundtrip": {
+        "a_ast_equiv": true,
+        "b_reparseable": true,
+        "c_text_similarity": 0.004524886877828055,
+        "d_notation_equiv": true,
+        "doi": "10.1016/S2215-0366_17_30209-2",
+        "error": null,
+        "ok": true
+      }
+    },
+    "10.1017/s0140525x00002405": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
@@ -2728,7 +2694,7 @@
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
-    "10.1023/A_1025762314250": {
+    "10.1023/a_1025762314250": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
         "annotations/subjects",
@@ -2752,11 +2718,11 @@
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
-    "10.1037/0003-066X.34.2.151": {
+    "10.1037/0003-066x.34.2.151": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
     },
-    "10.1037/0003-066X.43.3.151": {
+    "10.1037/0003-066x.43.3.151": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
         "respondent/elementary",
@@ -2772,7 +2738,7 @@
         "ok": true
       }
     },
-    "10.1037/0022-006X.49.4.526": {
+    "10.1037/0022-006x.49.4.526": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
         "annotations/subjects",
@@ -2793,7 +2759,7 @@
         "ok": true
       }
     },
-    "10.1037/0022-006X.55.1.3": {
+    "10.1037/0022-006x.55.1.3": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": [
         "annotations/subjects",
@@ -2811,46 +2777,6 @@
         "c_text_similarity": 0.007575757575757576,
         "d_notation_equiv": true,
         "doi": "10.1037/0022-006X.55.1.3",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1037/0022-006x.49.4.526": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/measurement",
-        "annotations/procedure-temporal",
-        "experiment/phase",
-        "operant/atomic"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.009584664536741214,
-        "d_notation_equiv": true,
-        "doi": "10.1037/0022-006x.49.4.526",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1037/0022-006x.55.1.3": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-trial-structure",
-        "experiment/phase",
-        "operant/atomic"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.007575757575757576,
-        "d_notation_equiv": true,
-        "doi": "10.1037/0022-006x.55.1.3",
         "error": null,
         "ok": true
       }
@@ -2880,25 +2806,6 @@
     "10.1037/0033-2909.84.4.800": {
       "classified_with": "procedure-classifier-haiku",
       "procedures": []
-    },
-    "10.1037/0033-295X.115.1.186": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": [
-        "operant/atomic",
-        "operant/compound",
-        "operant/program",
-        "operant/boundary-values",
-        "annotations/measurement"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.006074766355140187,
-        "d_notation_equiv": true,
-        "doi": "10.1037/0033-295X.115.1.186",
-        "error": null,
-        "ok": true
-      }
     },
     "10.1037/0033-295x.115.1.186": {
       "classified_with": "procedure-classifier-haiku",
@@ -3582,36 +3489,6 @@
         "ok": true
       }
     },
-    "10.1109/CCNC.2014.6940529": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1109/ITST.2013.6685566": {
-      "classified_with": "procedure-classifier-haiku",
-      "procedures": []
-    },
-    "10.1109/MILCOM.1997.644972": {
-      "classified_with": "haiku",
-      "procedures": []
-    },
-    "10.1109/TE.1959.4322064": {
-      "classified_with": "haiku",
-      "out_of_scope_reason": "Theoretical paper on teaching machine design with no experimental procedure or empirical results",
-      "procedures": [],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.0011305822498586771,
-        "d_notation_equiv": true,
-        "doi": "10.1109/TE.1959.4322064",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1109/TIT.1956.1056813": {
-      "classified_with": "haiku",
-      "procedures": []
-    },
     "10.1109/ccnc.2014.6940529": {
       "classified_with": "haiku",
       "procedures": []
@@ -3641,10 +3518,6 @@
       }
     },
     "10.1109/tit.1956.1056813": {
-      "classified_with": "haiku",
-      "procedures": []
-    },
-    "10.1111/j.1469-185X.2007.00030.x": {
       "classified_with": "haiku",
       "procedures": []
     },
@@ -3779,28 +3652,6 @@
         "ok": true
       }
     },
-    "10.1142/S0219635212500057": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/measurement",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-temporal",
-        "annotations/procedure-trial-structure",
-        "operant/program",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.0026455026455026454,
-        "d_notation_equiv": true,
-        "doi": "10.1142/S0219635212500057",
-        "error": null,
-        "ok": true
-      }
-    },
     "10.1142/s0219635212500057": {
       "classified_with": "haiku",
       "procedures": [
@@ -3930,7 +3781,7 @@
       "classified_with": "haiku",
       "procedures": []
     },
-    "10.1523/JNEUROSCI.0979-09.2009": {
+    "10.1523/jneurosci.0979-09.2009": {
       "classified_with": "haiku",
       "procedures": [
         "annotations/subjects",
@@ -3950,69 +3801,6 @@
         "c_text_similarity": 0.006888633754305396,
         "d_notation_equiv": false,
         "doi": "10.1523/JNEUROSCI.0979-09.2009",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1523/jneurosci.0979-09.2009": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/measurement",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-trial-structure",
-        "operant/program",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.006888633754305396,
-        "d_notation_equiv": false,
-        "doi": "10.1523/jneurosci.0979-09.2009",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1901/JEAB.1962.5-167": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/measurement",
-        "annotations/procedure-context",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-trial-structure",
-        "operant/program",
-        "operant/second_order",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.04219409282700422,
-        "d_notation_equiv": true,
-        "doi": "10.1901/JEAB.1962.5-167",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.1901/JEAB.2001.75-247": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/measurement",
-        "annotations/procedure-stimulus",
-        "operant/program",
-        "operant/compound"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.030033370411568408,
-        "d_notation_equiv": false,
-        "doi": "10.1901/JEAB.2001.75-247",
         "error": null,
         "ok": true
       }
@@ -5481,9 +5269,11 @@
       "procedures": [
         "annotations/subjects",
         "annotations/apparatus",
+        "annotations/measurement",
+        "annotations/procedure-context",
         "annotations/procedure-stimulus",
+        "annotations/procedure-trial-structure",
         "operant/program",
-        "operant/compound",
         "operant/second_order",
         "experiment/phase"
       ],
@@ -5492,7 +5282,7 @@
         "b_reparseable": true,
         "c_text_similarity": 0.04219409282700422,
         "d_notation_equiv": true,
-        "doi": "10.1901/jeab.1962.5-167",
+        "doi": "10.1901/JEAB.1962.5-167",
         "error": null,
         "ok": true
       }
@@ -9904,7 +9694,7 @@
         "ok": true
       }
     },
-    "10.3233/JAD-2011-110704": {
+    "10.3233/jad-2011-110704": {
       "classified_with": "haiku",
       "procedures": [
         "annotations/apparatus",
@@ -9919,24 +9709,6 @@
         "c_text_similarity": 0.0030737704918032786,
         "d_notation_equiv": true,
         "doi": "10.3233/JAD-2011-110704",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.3233/jad-2011-110704": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/apparatus",
-        "annotations/subjects",
-        "annotations/measurement",
-        "annotations/procedure-stimulus"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.0030737704918032786,
-        "d_notation_equiv": true,
-        "doi": "10.3233/jad-2011-110704",
         "error": null,
         "ok": true
       }
@@ -9986,7 +9758,7 @@
         "ok": true
       }
     },
-    "10.3758/BF03195555": {
+    "10.3758/bf03195555": {
       "classified_with": "haiku",
       "procedures": [
         "annotations/apparatus",
@@ -10010,142 +9782,6 @@
         "c_text_similarity": 0.01289134438305709,
         "d_notation_equiv": true,
         "doi": "10.3758/BF03195555",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.3758/BF03197983": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/measurement",
-        "operant/compound",
-        "operant/program",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": false,
-        "b_reparseable": null,
-        "c_text_similarity": null,
-        "d_notation_equiv": false,
-        "doi": "10.3758/BF03197983",
-        "error": "reader(T) returned no AST",
-        "ok": false
-      }
-    },
-    "10.3758/BF03204606": {
-      "classified_with": "haiku",
-      "procedures": [
-        "experiment/shaping",
-        "annotations/apparatus",
-        "annotations/subjects",
-        "annotations/measurement",
-        "operant/program",
-        "operant/reinforcement_delay",
-        "annotations/procedure-stimulus",
-        "operant/atomic",
-        "experiment/progressive-training"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.008567931456548347,
-        "d_notation_equiv": false,
-        "doi": "10.3758/BF03204606",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.3758/BF03209575": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/apparatus",
-        "annotations/measurement",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-temporal",
-        "annotations/procedure-trial-structure",
-        "annotations/subjects",
-        "composed/autoshape",
-        "composed/omission",
-        "experiment/phase",
-        "experiment/shaping",
-        "operant/program"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.005698005698005698,
-        "d_notation_equiv": true,
-        "doi": "10.3758/BF03209575",
-        "error": null,
-        "ok": true
-      }
-    },
-    "10.3758/BF03213358": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-temporal",
-        "annotations/measurement",
-        "operant/program",
-        "operant/boundary-values",
-        "operant/compound"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": false,
-        "b_reparseable": null,
-        "c_text_similarity": null,
-        "d_notation_equiv": false,
-        "doi": "10.3758/BF03213358",
-        "error": "reader(T) returned no AST",
-        "ok": false
-      }
-    },
-    "10.3758/BF03342209": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/apparatus",
-        "annotations/subjects",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-temporal",
-        "annotations/procedure-trial-structure",
-        "operant/aversive",
-        "operant/compound",
-        "operant/reinforcement_delay",
-        "experiment/phase"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": false,
-        "b_reparseable": null,
-        "c_text_similarity": null,
-        "d_notation_equiv": false,
-        "doi": "10.3758/BF03342209",
-        "error": "reader(T) returned no AST",
-        "ok": false
-      }
-    },
-    "10.3758/bf03195555": {
-      "classified_with": "haiku",
-      "procedures": [
-        "annotations/subjects",
-        "annotations/apparatus",
-        "annotations/procedure-stimulus",
-        "annotations/procedure-trial-structure",
-        "annotations/procedure-temporal",
-        "annotations/measurement",
-        "experiment/shaping",
-        "operant/atomic",
-        "operant/program",
-        "operant/modifier"
-      ],
-      "roundtrip": {
-        "a_ast_equiv": true,
-        "b_reparseable": true,
-        "c_text_similarity": 0.01289134438305709,
-        "d_notation_equiv": true,
-        "doi": "10.3758/bf03195555",
         "error": null,
         "ok": true
       }
@@ -10174,14 +9810,15 @@
         "annotations/subjects",
         "annotations/measurement",
         "operant/compound",
-        "operant/program"
+        "operant/program",
+        "experiment/phase"
       ],
       "roundtrip": {
         "a_ast_equiv": false,
         "b_reparseable": null,
         "c_text_similarity": null,
         "d_notation_equiv": false,
-        "doi": "10.3758/bf03197983",
+        "doi": "10.3758/BF03197983",
         "error": "reader(T) returned no AST",
         "ok": false
       }
@@ -10189,18 +9826,22 @@
     "10.3758/bf03204606": {
       "classified_with": "haiku",
       "procedures": [
-        "annotations/measurement",
         "experiment/shaping",
+        "annotations/apparatus",
+        "annotations/subjects",
+        "annotations/measurement",
         "operant/program",
         "operant/reinforcement_delay",
-        "respondent/pair"
+        "annotations/procedure-stimulus",
+        "operant/atomic",
+        "experiment/progressive-training"
       ],
       "roundtrip": {
         "a_ast_equiv": true,
         "b_reparseable": true,
         "c_text_similarity": 0.008567931456548347,
         "d_notation_equiv": false,
-        "doi": "10.3758/bf03204606",
+        "doi": "10.3758/BF03204606",
         "error": null,
         "ok": true
       }
@@ -10238,19 +9879,20 @@
       "classified_with": "haiku",
       "procedures": [
         "annotations/subjects",
-        "annotations/measurement",
+        "annotations/apparatus",
         "annotations/procedure-stimulus",
         "annotations/procedure-temporal",
+        "annotations/measurement",
         "operant/program",
-        "operant/modifier",
-        "operant/reinforcement_delay"
+        "operant/boundary-values",
+        "operant/compound"
       ],
       "roundtrip": {
         "a_ast_equiv": false,
         "b_reparseable": null,
         "c_text_similarity": null,
         "d_notation_equiv": false,
-        "doi": "10.3758/bf03213358",
+        "doi": "10.3758/BF03213358",
         "error": "reader(T) returned no AST",
         "ok": false
       }

@@ -1,7 +1,7 @@
 # operant/aversive
 
 Procedure source: `aversive.json`  
-Total papers classified: **36**  
+Total papers classified: **35**  
 Passing: **31**
 
 ## DOIs
@@ -10,8 +10,8 @@ Passing: **31**
 - [x] `10.1002/jeab.237` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.1002/jeab.494` — PASS (a:✓ b:✓ c:0.02 d:✗)
 - [ ] `10.1016/0165-0270(95)00153-0` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)
-- [x] `10.1016/S0376-6357_98_00056-4` — PASS (a:✓ b:✓ c:0.02 d:✗)
-- [x] `10.1023/A_1025762314250` — PASS (a:✓ b:✓ c:0.00 d:✓)
+- [x] `10.1016/s0376-6357_98_00056-4` — PASS (a:✓ b:✓ c:0.02 d:✗)
+- [x] `10.1023/a_1025762314250` — PASS (a:✓ b:✓ c:0.00 d:✓)
 - [x] `10.1037/h0060730` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [x] `10.1037/h0093649` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.1126/science.118.3058.157` — PASS (a:✓ b:✓ c:0.01 d:✓)
@@ -40,5 +40,4 @@ Passing: **31**
 - [x] `10.1901/jeab.1979.32-399` — PASS (a:✓ b:✓ c:0.07 d:✗)
 - [x] `10.1901/jeab.2011.96-261` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.2310/7010.2006.00158` — PASS (a:✓ b:✓ c:0.01 d:✓)
-- [ ] `10.3758/BF03342209` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)
 - [ ] `10.3758/bf03342209` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)

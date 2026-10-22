@@ -1,8 +1,8 @@
 # operant/modifier
 
 Procedure source: `modifier.json`  
-Total papers classified: **29**  
-Passing: **25**
+Total papers classified: **27**  
+Passing: **24**
 
 ## DOIs
 
@@ -33,5 +33,3 @@ Passing: **25**
 - [x] `10.1901/jeab.2005.69-04` — PASS (a:✓ b:✓ c:0.04 d:✓)
 - [x] `10.1901/jeab.2007.01-06` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [x] `10.1901/jeab.2012.98-1` — PASS (a:✓ b:✓ c:0.03 d:✗)
-- [x] `10.3758/bf03195555` — PASS (a:✓ b:✓ c:0.01 d:✓)
-- [ ] `10.3758/bf03213358` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)

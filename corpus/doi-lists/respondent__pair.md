@@ -1,8 +1,8 @@
 # respondent/pair
 
 Procedure source: `pair.json`  
-Total papers classified: **22**  
-Passing: **16**
+Total papers classified: **21**  
+Passing: **15**
 
 ## DOIs
 
@@ -25,6 +25,5 @@ Passing: **16**
 - [ ] `10.1901/jeab.1968.11-1` — FAIL (a:✗ b:✓ c:0.01 d:✗)
 - [x] `10.1901/jeab.1968.11-405` — PASS (a:✓ b:✓ c:0.06 d:✗)
 - [x] `10.1901/jeab.1986.46-219` — PASS (a:✓ b:✓ c:0.01 d:✗)
-- [x] `10.3758/bf03204606` — PASS (a:✓ b:✓ c:0.01 d:✗)
 - [x] `10.3758/bf03209575` — PASS (a:✓ b:✓ c:0.01 d:✓)
 - [ ] `10.3758/bf03342209` — FAIL (a:✗ b:– c:– d:✗) (reader(T) returned no AST)

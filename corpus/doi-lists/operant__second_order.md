@@ -1,8 +1,8 @@
 # operant/second_order
 
 Procedure source: `second_order.json`  
-Total papers classified: **30**  
-Passing: **27**
+Total papers classified: **29**  
+Passing: **26**
 
 ## DOIs
 
@@ -11,7 +11,6 @@ Passing: **27**
 - [x] `10.1002/jeab.305` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [x] `10.1002/jeab.73` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [x] `10.1002/jeab.880` — PASS (a:✓ b:✓ c:0.00 d:✓)
-- [x] `10.1901/JEAB.1962.5-167` — PASS (a:✓ b:✓ c:0.04 d:✓)
 - [x] `10.1901/jaba.2007.44-06` — PASS (a:✓ b:✓ c:0.03 d:✓)
 - [x] `10.1901/jeab.1958.1-163` — PASS (a:✓ b:✓ c:0.02 d:✓)
 - [x] `10.1901/jeab.1958.1-167` — PASS (a:✓ b:✓ c:0.02 d:✓)

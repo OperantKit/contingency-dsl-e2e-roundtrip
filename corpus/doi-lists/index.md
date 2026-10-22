@@ -1,45 +1,45 @@
 # DOI lists by procedure
 
-Total classified DOIs: **605**
-Out of scope: **40**
+Total classified DOIs: **580**
+Out of scope: **39**
 
-- [annotations/apparatus](annotations__apparatus.md) — 299/349 passing
+- [annotations/apparatus](annotations__apparatus.md) — 291/339 passing
 - [annotations/errors](annotations__errors.md) — 13/13 passing
 - [annotations/extensions/composed-annotator](annotations__extensions__composed-annotator.md) — 0/0 passing
 - [annotations/extensions/respondent-annotator](annotations__extensions__respondent-annotator.md) — 0/0 passing
-- [annotations/measurement](annotations__measurement.md) — 225/265 passing
+- [annotations/measurement](annotations__measurement.md) — 216/253 passing
 - [annotations/procedure-context](annotations__procedure-context.md) — 46/52 passing
-- [annotations/procedure-stimulus](annotations__procedure-stimulus.md) — 256/298 passing
-- [annotations/procedure-temporal](annotations__procedure-temporal.md) — 214/246 passing
-- [annotations/procedure-trial-structure](annotations__procedure-trial-structure.md) — 159/179 passing
+- [annotations/procedure-stimulus](annotations__procedure-stimulus.md) — 248/288 passing
+- [annotations/procedure-temporal](annotations__procedure-temporal.md) — 210/240 passing
+- [annotations/procedure-trial-structure](annotations__procedure-trial-structure.md) — 154/173 passing
 - [annotations/program-level](annotations__program-level.md) — 29/34 passing
-- [annotations/subjects](annotations__subjects.md) — 324/385 passing
-- [composed/autoshape](composed__autoshape.md) — 10/11 passing
+- [annotations/subjects](annotations__subjects.md) — 315/372 passing
+- [composed/autoshape](composed__autoshape.md) — 9/10 passing
 - [composed/conditioned-suppression](composed__conditioned-suppression.md) — 2/2 passing
-- [composed/omission](composed__omission.md) — 5/5 passing
+- [composed/omission](composed__omission.md) — 4/4 passing
 - [composed/pit](composed__pit.md) — 1/2 passing
 - [composed/two-process-theory](composed__two-process-theory.md) — 1/2 passing
 - [experiment/errors](experiment__errors.md) — 6/7 passing
 - [experiment/paper](experiment__paper.md) — 34/39 passing
-- [experiment/phase](experiment__phase.md) — 234/266 passing
+- [experiment/phase](experiment__phase.md) — 228/258 passing
 - [experiment/progressive-training](experiment__progressive-training.md) — 52/61 passing
-- [experiment/shaping](experiment__shaping.md) — 53/60 passing
+- [experiment/shaping](experiment__shaping.md) — 50/57 passing
 - [operant/algebra](operant__algebra.md) — 6/7 passing
-- [operant/atomic](operant__atomic.md) — 147/166 passing
-- [operant/aversive](operant__aversive.md) — 31/36 passing
+- [operant/atomic](operant__atomic.md) — 143/162 passing
+- [operant/aversive](operant__aversive.md) — 31/35 passing
 - [operant/binding](operant__binding.md) — 38/41 passing
-- [operant/boundary-values](operant__boundary-values.md) — 11/14 passing
+- [operant/boundary-values](operant__boundary-values.md) — 10/13 passing
 - [operant/compound-kw-aliases](operant__compound-kw-aliases.md) — 0/0 passing
-- [operant/compound](operant__compound.md) — 167/192 passing
+- [operant/compound](operant__compound.md) — 164/187 passing
 - [operant/errors](operant__errors.md) — 12/12 passing
 - [operant/interpolated](operant__interpolated.md) — 2/3 passing
 - [operant/lh_propagation](operant__lh_propagation.md) — 0/0 passing
 - [operant/limited_hold](operant__limited_hold.md) — 14/17 passing
-- [operant/modifier](operant__modifier.md) — 25/29 passing
-- [operant/program](operant__program.md) — 252/292 passing
-- [operant/reinforcement_delay](operant__reinforcement_delay.md) — 62/75 passing
+- [operant/modifier](operant__modifier.md) — 24/27 passing
+- [operant/program](operant__program.md) — 244/282 passing
+- [operant/reinforcement_delay](operant__reinforcement_delay.md) — 61/72 passing
 - [operant/response_cost](operant__response_cost.md) — 6/7 passing
-- [operant/second_order](operant__second_order.md) — 27/30 passing
+- [operant/second_order](operant__second_order.md) — 26/29 passing
 - [operant/semantic-violations-extended](operant__semantic-violations-extended.md) — 0/0 passing
 - [operant/stateful/adjusting](operant__stateful__adjusting.md) — 16/17 passing
 - [operant/stateful/errors](operant__stateful__errors.md) — 0/0 passing
@@ -58,5 +58,5 @@ Out of scope: **40**
 - [respondent/compound-stimulus](respondent__compound-stimulus.md) — 2/4 passing
 - [respondent/contingency-controls](respondent__contingency-controls.md) — 8/11 passing
 - [respondent/elementary](respondent__elementary.md) — 27/35 passing
-- [respondent/pair](respondent__pair.md) — 16/22 passing
+- [respondent/pair](respondent__pair.md) — 15/21 passing
 - [respondent/with-annotations](respondent__with-annotations.md) — 0/0 passing
