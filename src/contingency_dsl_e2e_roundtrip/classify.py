@@ -52,8 +52,88 @@ class ClassifierUnavailable(RuntimeError):
     """Raised when no backend is usable."""
 
 
+# Keys whose bare names were read in more than one way by different raters.
+# Each definition states what the key's conformance file covers.
+KEY_DEFINITIONS: dict[str, str] = {
+    "operant/atomic": (
+        "the paper runs at least one simple schedule on its own (FR, VR, RR, FI, "
+        "VI, RI, FT, VT, RT, CRF, or EXT) as the contingency of a condition or "
+        "phase. Do not add it only because the components inside a compound "
+        "schedule are simple schedules."
+    ),
+    "operant/compound": (
+        "two or more schedules are combined into one arrangement: concurrent, "
+        "chained, tandem, alternative, conjunctive, multiple, or mixed schedules, "
+        "or punishment superimposed on a reinforcement baseline (including "
+        "changeover delays/ratios and blackouts between components). A compound "
+        "stimulus (several stimulus elements presented together) is not a "
+        "compound schedule."
+    ),
+    "operant/timeout": (
+        "a timeout period follows a response or event, during which the schedule "
+        "is suspended and responses have no programmed consequence (resetting or "
+        "non-resetting). A blackout between multiple-schedule components or an "
+        "ordinary intertrial interval alone is not a timeout."
+    ),
+    "operant/program": (
+        "program-level declarations shared by several schedules are needed: a "
+        "limited hold applied to every schedule, or the same named schedule reused "
+        "across several conditions (e.g., a baseline reinstated after a probe). "
+        "Do not add it merely because the paper has a schedule."
+    ),
+    "experiment/phase": (
+        "the paper runs two or more successive conditions (e.g., baseline, "
+        "treatment, reversal, extinction after acquisition), each lasting a set "
+        "number of sessions or until a stability criterion is met. A single "
+        "condition does not qualify."
+    ),
+    "experiment/shaping": (
+        "the target response is established by shaping, i.e., reinforcing "
+        "successive approximations (by experimenter judgment, percentile "
+        "schedules, or pre-set stages). Magazine training or autoshaping alone "
+        "is not shaping."
+    ),
+    "annotations/procedure-stimulus": (
+        "the Method identifies the stimuli of the procedure: the reinforcer or "
+        "punisher (e.g., food pellet, sucrose, token with its backup reinforcer), "
+        "discriminative stimuli for each component, brief stimuli in second-order "
+        "schedules, or stimulus classes with trained and tested relations "
+        "(stimulus equivalence)."
+    ),
+    "annotations/procedure-temporal": (
+        "the Method reports timing infrastructure: the time resolution or unit of "
+        "the controlling program, a warm-up period before the session, or the "
+        "algorithm generating variable schedule values (e.g., Fleshler & Hoffman, "
+        "1962; arithmetic progression). Do not add it merely because schedule "
+        "values are given in seconds."
+    ),
+    "annotations/procedure-trial-structure": (
+        "one session mixes trial types of a named design: peak procedure "
+        "(reinforced fixed-interval trials interspersed with longer unreinforced "
+        "probe trials), reinstatement (response-independent reinforcers delivered "
+        "during extinction), or temporal bisection (short and long anchor "
+        "durations with intermediate probes). Do not add it for ordinary "
+        "discrete-trial procedures."
+    ),
+    "annotations/measurement": (
+        "the Method specifies how sessions and phases are measured or ended: "
+        "session-end rules (time and/or reinforcer count), stability or "
+        "phase-change criteria, baseline/operant-level sessions before training, "
+        "dependent measures beyond overall response rate (e.g., bouts, IRTs, "
+        "log-survivor plots, changeovers), event logging resolution, exclusion of "
+        "a warm-up from analysis, or the trial/block structure and probe policy "
+        "of a session."
+    ),
+}
+
+
+def _key_line(key: str) -> str:
+    definition = KEY_DEFINITIONS.get(key)
+    return f"- {key}: {definition}" if definition else f"- {key}"
+
+
 def _system_prompt(keys: list[str]) -> str:
-    bullet_list = "\n".join(f"- {k}" for k in keys)
+    bullet_list = "\n".join(_key_line(k) for k in keys)
     return (
         "You classify behavior-analysis Method sections against a fixed taxonomy "
         "derived from the contingency-dsl conformance corpus.\n\n"
@@ -77,7 +157,8 @@ def _system_prompt(keys: list[str]) -> str:
         "under the cited schedules.\n"
         "Otherwise leave `out_of_scope_reason` as null and populate "
         "`procedures` with every matching key.\n\n"
-        "Taxonomy keys:\n" + bullet_list
+        "Taxonomy keys (a key followed by a definition applies only when the "
+        "definition holds):\n" + bullet_list
     )
 
 

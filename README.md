@@ -44,13 +44,18 @@ each DOI displayed as a checkbox status line:
 - [ ] 10.1002/jaba.226        — FAIL (a:✗ b:✓ c:0.41 d:✗)
 ```
 
-Classification reliability was checked on a stratified sample of N=60 papers:
-the first rater is Claude haiku (the classifications stored in `state.json`) and
-the second rater is OpenAI gpt-6.1-sol via the Codex CLI, given the same prompt
-and output schema (`e2e second-rate`, then `e2e agreement`). Per-key Cohen's κ
-(assigned / not assigned) pooled over all keys gives micro κ = 0.553, with
-`operant/timeout` lowest (κ = 0.200) and `annotations/subjects` highest
-(κ = 0.859) among the 13 keys that both raters assigned to at least 5 papers.
+Classification reliability was checked on a stratified sample of N=60 papers.
+Both raters classified the sample with the current prompt, which gives a short
+definition for each key whose bare name raters had read in different ways: the
+first rater is Claude haiku via the `claude` CLI and the second rater is OpenAI
+gpt-6.1-sol via the Codex CLI, with the same prompt and output schema
+(`e2e second-rate --backend claude-cli|codex-cli`, then
+`e2e agreement <second.jsonl> --first <first.jsonl>`; without `--first` the
+classifications stored in `state.json` are the first rater). Per-key Cohen's κ
+(assigned / not assigned) pooled over all keys gives micro κ = 0.795; among the
+14 keys that both raters assigned to at least 5 papers, `experiment/paper` is
+lowest (κ = 0.343) and `annotations/measurement` and
+`annotations/procedure-stimulus` are highest (κ = 1.000).
 
 ## Generated artifacts (gitignored)
 

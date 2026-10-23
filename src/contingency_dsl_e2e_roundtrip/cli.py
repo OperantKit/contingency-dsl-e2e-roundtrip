@@ -190,7 +190,17 @@ def _cmd_agreement(args: argparse.Namespace) -> int:
         print(f"[error] not a file: {path}", file=sys.stderr)
         return 2
     rows = agreement_mod.load_jsonl(path.read_text(encoding="utf-8"))
-    entries = state_mod.load().get("entries", {})
+    if args.first:
+        first_path = Path(args.first)
+        if not first_path.is_file():
+            print(f"[error] not a file: {first_path}", file=sys.stderr)
+            return 2
+        entries = {
+            str(r.get("doi", "")): {**r, "classified_with": r.get("model", "?")}
+            for r in agreement_mod.load_jsonl(first_path.read_text(encoding="utf-8"))
+        }
+    else:
+        entries = state_mod.load().get("entries", {})
     keys = [p.key for p in discover_procedures()]
     table = agreement_mod.agreement_table(entries, rows, keys)
     print(f"unmatched={table.unmatched}", file=sys.stderr)
@@ -293,9 +303,12 @@ def _build_parser() -> argparse.ArgumentParser:
 
     p_ag = sub.add_parser(
         "agreement",
-        help="Per-key Cohen's kappa between state.json and a second-rater JSONL",
+        help="Per-key Cohen's kappa between state.json (or --first JSONL) and a second-rater JSONL",
     )
     p_ag.add_argument("second")
+    p_ag.add_argument("--first", default=None,
+                      help="First-rater JSONL in the second-rate format "
+                           "(default: the classifications in state.json)")
     p_ag.add_argument("--format", default="md", choices=sorted(_FORMATTERS))
     p_ag.add_argument("--keys", default="all", choices=["all", "used"],
                       help="Rows to print; micro kappa always pools every key")

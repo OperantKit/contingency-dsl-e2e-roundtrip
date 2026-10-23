@@ -7,8 +7,10 @@ test the pure parsing surface only.
 from __future__ import annotations
 
 from contingency_dsl_e2e_roundtrip.classify import (
+    KEY_DEFINITIONS,
     ClassificationResult,
     _parse_response,
+    _system_prompt,
 )
 
 
@@ -88,3 +90,32 @@ def test_classification_result_carries_reason():
     )
     assert result.out_of_scope_reason == "meta-analysis"
     assert result.procedures == ()
+
+
+def test_prompt_attaches_definition_to_defined_keys_only():
+    prompt = _system_prompt(["operant/atomic", "operant/stateful/adjusting"])
+    lines = prompt.splitlines()
+    atomic = next(line for line in lines if line.startswith("- operant/atomic"))
+    assert atomic == f"- operant/atomic: {KEY_DEFINITIONS['operant/atomic']}"
+    assert "- operant/stateful/adjusting" in lines
+
+
+def test_prompt_omits_definitions_for_keys_not_offered():
+    prompt = _system_prompt(["operant/stateful/adjusting"])
+    assert KEY_DEFINITIONS["operant/atomic"] not in prompt
+
+
+def test_definitions_cover_the_low_agreement_keys():
+    assert set(KEY_DEFINITIONS) == {
+        "operant/atomic",
+        "operant/compound",
+        "operant/timeout",
+        "operant/program",
+        "experiment/phase",
+        "experiment/shaping",
+        "annotations/procedure-stimulus",
+        "annotations/procedure-temporal",
+        "annotations/procedure-trial-structure",
+        "annotations/measurement",
+    }
+    assert all(text.strip() for text in KEY_DEFINITIONS.values())

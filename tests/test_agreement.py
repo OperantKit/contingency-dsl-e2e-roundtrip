@@ -120,6 +120,36 @@ def test_cli_matches_case_insensitively_and_counts_unmatched(
     assert atomic["kappa"] == pytest.approx(1.0)
 
 
+def test_cli_first_jsonl_replaces_state_as_first_rater(tmp_path, monkeypatch, capsys):
+    state_path = tmp_path / "state.json"
+    state_path.write_text(json.dumps({"version": 1, "entries": _entries({
+        "10.1/a": [],
+        "10.1/b": ["operant/atomic"],
+    })}), encoding="utf-8")
+    monkeypatch.setattr(state_mod, "STATE_PATH", state_path)
+    first_rows = [dict(r, model="first-model") for r in _second({
+        "10.1/A": ["operant/atomic"],
+        "10.1/b": [],
+    })]
+    second_rows = _second({"10.1/a": ["operant/atomic"], "10.1/b": []})
+    first_path = tmp_path / "first.jsonl"
+    second_path = tmp_path / "second.jsonl"
+    first_path.write_text("".join(json.dumps(r) + "\n" for r in first_rows),
+                          encoding="utf-8")
+    second_path.write_text("".join(json.dumps(r) + "\n" for r in second_rows),
+                           encoding="utf-8")
+
+    rc = cli.main(["agreement", str(second_path), "--first", str(first_path),
+                   "--format", "json"])
+
+    payload = json.loads(capsys.readouterr().out)
+    assert rc == 0
+    assert payload["n"] == 2
+    assert payload["first_raters"] == {"first-model": 2}
+    atomic = next(r for r in payload["rows"] if r["key"] == "operant/atomic")
+    assert atomic["kappa"] == pytest.approx(1.0)
+
+
 def test_cli_returns_two_when_nothing_matches(tmp_path, monkeypatch, capsys):
     state_path = tmp_path / "state.json"
     state_path.write_text(json.dumps({"version": 1, "entries": {}}), encoding="utf-8")
