@@ -43,6 +43,13 @@ procedure key ごとに `corpus/doi-lists/` 配下に markdown ファイルが�
 - [ ] 10.1002/jaba.226        — FAIL (a:✗ b:✓ c:0.41 d:✗)
 ```
 
+分類の信頼性は層化抽出した N=60 本で確かめた。第一評定者は Claude haiku
+（`state.json` に保存済みの分類）、第二評定者は Codex CLI 経由の OpenAI
+gpt-6.1-sol で、同じ prompt と出力 schema を与えた（`e2e second-rate` の後に
+`e2e agreement`）。key ごとの Cohen κ（付与 / 非付与）を全 key で束ねた
+micro κ は 0.553 で、両評定者とも 5 本以上に付与した 13 key のうち最低は
+`operant/timeout`（κ = 0.200）、最高は `annotations/subjects`（κ = 0.859）。
+
 ## 生成アーティファクト（gitignored）
 
 `e2e run` 実行時、論文ごとにラウンドトリップ中間物を人間可読な表層形で
