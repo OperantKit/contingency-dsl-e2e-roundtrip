@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Sequence
 
 from . import agent_gen
+from . import agreement as agreement_mod
 from . import artifacts as artifacts_mod
 from . import batch as batch_mod
 from . import classify as classify_mod
@@ -119,6 +120,87 @@ def _cmd_report(_: argparse.Namespace) -> int:
     return 0
 
 
+def _done_dois(path: Path) -> set[str]:
+    if not path.is_file():
+        return set()
+    rows = agreement_mod.load_jsonl(path.read_text(encoding="utf-8"))
+    return {state_mod.normalize_doi(str(r.get("doi", ""))) for r in rows}
+
+
+def _cmd_second_rate(args: argparse.Namespace) -> int:
+    dois_path = Path(args.dois)
+    if not dois_path.is_file():
+        print(f"[error] not a file: {dois_path}", file=sys.stderr)
+        return 2
+    out = Path(args.out) if args.out else config.work_dir() / "second-rater.jsonl"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    done = _done_dois(out)
+    procedures = discover_procedures()
+    wanted = [state_mod.normalize_doi(line)
+              for line in dois_path.read_text(encoding="utf-8").splitlines()
+              if line.strip()]
+    written = skipped = failed = 0
+    for doi in wanted:
+        if doi in done:
+            skipped += 1
+            continue
+        extracted = extract_mod.ensure_extracted(doi)
+        if extracted is None:
+            print(f"[skip] {doi}: no extractable Method section", file=sys.stderr)
+            failed += 1
+            continue
+        _, text = extracted
+        try:
+            result = classify_mod.classify(
+                doi, text, model=args.model, procedures=procedures, backend=args.backend
+            )
+        except classify_mod.ClassifierUnavailable as exc:
+            print(f"[error] classifier unavailable: {exc}", file=sys.stderr)
+            return 2
+        except Exception as exc:  # pragma: no cover - remote / subprocess errors
+            print(f"[error] {doi}: {exc}", file=sys.stderr)
+            failed += 1
+            continue
+        row = {
+            "doi": doi,
+            "procedures": list(result.procedures),
+            "out_of_scope_reason": result.out_of_scope_reason,
+            "model": result.model,
+            "backend": args.backend,
+        }
+        with out.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+        done.add(doi)
+        written += 1
+        print(f"[ok] {doi}: {', '.join(result.procedures) or '(none)'}")
+    print(f"written={written} skipped={skipped} failed={failed} out={out}", file=sys.stderr)
+    return 0
+
+
+_FORMATTERS = {
+    "md": agreement_mod.format_md,
+    "tsv": agreement_mod.format_tsv,
+    "json": agreement_mod.format_json,
+}
+
+
+def _cmd_agreement(args: argparse.Namespace) -> int:
+    path = Path(args.second)
+    if not path.is_file():
+        print(f"[error] not a file: {path}", file=sys.stderr)
+        return 2
+    rows = agreement_mod.load_jsonl(path.read_text(encoding="utf-8"))
+    entries = state_mod.load().get("entries", {})
+    keys = [p.key for p in discover_procedures()]
+    table = agreement_mod.agreement_table(entries, rows, keys)
+    print(f"unmatched={table.unmatched}", file=sys.stderr)
+    if table.n == 0:
+        print("[error] no second-rater row matched state.json", file=sys.stderr)
+        return 2
+    sys.stdout.write(_FORMATTERS[args.format](table, used_only=args.keys == "used"))
+    return 0
+
+
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="e2e")
     parser.add_argument(
@@ -194,6 +276,30 @@ def _build_parser() -> argparse.ArgumentParser:
     p_ib.add_argument("--results", default=None,
                       help="Results path (default: <corpus>/work/classify-results.jsonl)")
     p_ib.set_defaults(func=_cmd_ingest_batch)
+
+    p_sr = sub.add_parser(
+        "second-rate",
+        help="Classify the DOIs in a file (one per line) with a second rater and "
+             "append the results to a JSONL file; state.json is not written",
+    )
+    p_sr.add_argument("dois")
+    p_sr.add_argument("--out", default=None,
+                      help="Output JSONL (default: <corpus>/work/second-rater.jsonl)")
+    p_sr.add_argument("--backend", default="codex-cli",
+                      choices=["codex-cli", "claude-cli", "anthropic"])
+    p_sr.add_argument("--model", default=None,
+                      help="Model for the backend (default: the backend's default)")
+    p_sr.set_defaults(func=_cmd_second_rate)
+
+    p_ag = sub.add_parser(
+        "agreement",
+        help="Per-key Cohen's kappa between state.json and a second-rater JSONL",
+    )
+    p_ag.add_argument("second")
+    p_ag.add_argument("--format", default="md", choices=sorted(_FORMATTERS))
+    p_ag.add_argument("--keys", default="all", choices=["all", "used"],
+                      help="Rows to print; micro kappa always pools every key")
+    p_ag.set_defaults(func=_cmd_agreement)
 
     sub.add_parser(
         "regenerate-agent",

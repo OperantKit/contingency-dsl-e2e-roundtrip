@@ -7,6 +7,9 @@ Backends (auto-selected unless forced by ``E2E_CLASSIFIER_BACKEND`` env var):
 2. ``claude-cli`` — Subprocess to the ``claude`` CLI (Claude Code). Uses the
    user's existing CLI session, so no API key is needed. Slower per call
    because each invocation rebuilds the session context cache.
+3. ``codex-cli`` — Subprocess to the OpenAI ``codex`` CLI (``codex exec``).
+   Never auto-selected; it exists so a model from a different vendor can act
+   as a second rater for inter-rater agreement (``e2e second-rate``).
 
 Auto-selection order:
     ANTHROPIC_API_KEY set  -> ``anthropic``
@@ -22,13 +25,17 @@ import json
 import os
 import shutil
 import subprocess
+import tempfile
 from dataclasses import dataclass
+from pathlib import Path
 
 from .procedures import ProcedureType, discover_procedures
 
 
 DEFAULT_MODEL = "claude-haiku-4-5-20251001"
 DEFAULT_CLI_MODEL = "haiku"
+DEFAULT_CODEX_MODEL = "gpt-6.1-sol"
+_CLI_TIMEOUT_S = 180
 _MAX_INPUT_CHARS = 18_000
 
 
@@ -93,8 +100,13 @@ def classify(
     *,
     model: str | None = None,
     procedures: list[ProcedureType] | None = None,
+    backend: str | None = None,
 ) -> ClassificationResult:
-    backend = _pick_backend()
+    """Classify one Method section.
+
+    ``backend`` forces a backend; otherwise ``_pick_backend`` decides.
+    """
+    backend = backend or _pick_backend()
     procs = procedures or discover_procedures()
     keys = [p.key for p in procs]
     truncated = procedure_text[:_MAX_INPUT_CHARS]
@@ -103,6 +115,8 @@ def classify(
         return _classify_anthropic(doi, truncated, keys, model or DEFAULT_MODEL)
     if backend == "claude-cli":
         return _classify_cli(doi, truncated, keys, model or DEFAULT_CLI_MODEL)
+    if backend == "codex-cli":
+        return _classify_codex(doi, truncated, keys, model or DEFAULT_CODEX_MODEL)
     raise ClassifierUnavailable(f"unknown backend: {backend}")
 
 
@@ -152,24 +166,8 @@ def _classify_cli(
     if not shutil.which("claude"):
         raise ClassifierUnavailable("`claude` CLI not found on PATH")
 
-    schema = {
-        "type": "object",
-        "properties": {
-            "procedures": {
-                "type": "array",
-                "items": {"type": "string", "enum": keys},
-            },
-            "out_of_scope_reason": {
-                "type": ["string", "null"],
-            },
-        },
-        "required": ["procedures", "out_of_scope_reason"],
-        "additionalProperties": False,
-    }
-    prompt = (
-        _system_prompt(keys)
-        + f"\n\nDOI: {doi}\n\nMethod section:\n{text}"
-    )
+    schema = _output_schema(keys)
+    prompt = _cli_prompt(doi, text, keys)
     cmd = [
         "claude",
         "-p",
@@ -186,7 +184,7 @@ def _classify_cli(
         input=prompt,
         capture_output=True,
         text=True,
-        timeout=180,
+        timeout=_CLI_TIMEOUT_S,
         cwd="/tmp",
     )
     if proc.returncode != 0:
@@ -213,6 +211,81 @@ def _classify_cli(
         raw=proc.stdout,
         out_of_scope_reason=reason,
     )
+
+
+def _classify_codex(
+    doi: str, text: str, keys: list[str], model: str
+) -> ClassificationResult:
+    """Run ``codex exec`` read-only in a scratch directory with the same
+    prompt and JSON schema as the ``claude-cli`` backend."""
+    if not shutil.which("codex"):
+        raise ClassifierUnavailable("`codex` CLI not found on PATH")
+
+    with tempfile.TemporaryDirectory(prefix="e2e-codex-") as tmp:
+        workdir = Path(tmp)
+        schema_path = workdir / "schema.json"
+        out_path = workdir / "out.json"
+        schema_path.write_text(json.dumps(_output_schema(keys)), encoding="utf-8")
+        cmd = [
+            "codex",
+            "exec",
+            "--skip-git-repo-check",
+            "--ephemeral",
+            "-s",
+            "read-only",
+            "-C",
+            str(workdir),
+            "-m",
+            model,
+            "--output-schema",
+            str(schema_path),
+            "-o",
+            str(out_path),
+            "-",
+        ]
+        proc = subprocess.run(
+            cmd,
+            input=_cli_prompt(doi, text, keys),
+            capture_output=True,
+            text=True,
+            timeout=_CLI_TIMEOUT_S,
+            cwd=str(workdir),
+        )
+        if proc.returncode != 0:
+            raise RuntimeError(f"codex CLI exited {proc.returncode}: {proc.stderr[:300]}")
+        if not out_path.is_file():
+            raise RuntimeError("codex CLI wrote no output file")
+        raw = out_path.read_text(encoding="utf-8")
+
+    parsed, reason = _parse_response(raw, allowed=set(keys))
+    return ClassificationResult(
+        doi=doi,
+        procedures=tuple(parsed),
+        model=model,
+        raw=raw,
+        out_of_scope_reason=reason,
+    )
+
+
+def _cli_prompt(doi: str, text: str, keys: list[str]) -> str:
+    return _system_prompt(keys) + f"\n\nDOI: {doi}\n\nMethod section:\n{text}"
+
+
+def _output_schema(keys: list[str]) -> dict[str, object]:
+    return {
+        "type": "object",
+        "properties": {
+            "procedures": {
+                "type": "array",
+                "items": {"type": "string", "enum": keys},
+            },
+            "out_of_scope_reason": {
+                "type": ["string", "null"],
+            },
+        },
+        "required": ["procedures", "out_of_scope_reason"],
+        "additionalProperties": False,
+    }
 
 
 def _parse_response(
