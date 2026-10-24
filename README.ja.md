@@ -34,16 +34,16 @@ AST（抽象構文木）は、スケジュールの式をパースした形で�
 
 ## インストール
 
-Python 3.11 以上。OperantKit のパッケージはまだ PyPI に公開されておらず、このパッケージが依存する contingency-dsl-py を pip が GitHub から解決できないので、OperantKit のパッケージは依存の解決を止めて入れ、外部ライブラリを足します。
+
+Python 3.11 以上。OperantKit のパッケージはまだ PyPI に公開されていません。このパッケージを contingency-dsl-py と一緒に GitHub から入れます。contingency-procedure2dsl と contingency-dsl2procedure への依存は GitHub のタグを指しており、外部ライブラリは PyPI から入ります。
 
 ```bash
-G=git+https://github.com/OperantKit
-pip install --no-deps $G/contingency-dsl-e2e-roundtrip $G/contingency-dsl-py \
-  $G/contingency-procedure2dsl@v0.1.0 $G/contingency-dsl2procedure@v0.1.0
-pip install pyyaml pypdf pymupdf
+# PyPI に公開されるまでは、OperantKit の依存と一緒に GitHub から入れる。
+pip install git+https://github.com/OperantKit/contingency-dsl-py \
+            git+https://github.com/OperantKit/contingency-dsl-e2e-roundtrip
 ```
 
-pip（と `pip check`）は、contingency-dsl-py の開発版が宣言された版を満たさないという食い違いを報告します。以下のコマンドには影響しません。
+依存は pip が解決するので、`pip check` は何も報告しません。
 
 手続きの種類は [contingency-dsl](https://github.com/OperantKit/contingency-dsl) の適合テストから読み取るので、それも clone し、`E2E_CONFORMANCE_ROOT` にその `conformance/` ディレクトリを指定します。
 

@@ -38,4 +38,4 @@ The round trip itself is rule-based and needs no API key. Only `e2e classify` (a
 - [contingency-dsl](https://github.com/OperantKit/contingency-dsl): the schedule language specification; its `conformance/` tree defines the procedure types used here
 - [contingency-procedure2dsl](https://github.com/OperantKit/contingency-procedure2dsl): Method-section text to AST (the reader in this harness)
 - [contingency-dsl2procedure](https://github.com/OperantKit/contingency-dsl2procedure): AST to Method-section text (the compiler in this harness)
-- [contingency-dsl-py](https://github.com/OperantKit/contingency-dsl-py): parses and renders DSL text (`pip install contingency-dsl-py`)
+- [contingency-dsl-py](https://github.com/OperantKit/contingency-dsl-py): parses and renders DSL text

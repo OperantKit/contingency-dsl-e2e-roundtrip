@@ -34,16 +34,16 @@ An AST (abstract syntax tree) is the parsed form of a schedule expression. Four 
 
 ## Installation
 
-Python 3.11 or newer. The OperantKit packages are not on PyPI yet, and pip cannot resolve this package's dependency on contingency-dsl-py from GitHub, so install the OperantKit packages without dependency resolution and add the third-party libraries:
+
+Python 3.11 or newer. The OperantKit packages are not on PyPI yet. Install this package from GitHub together with contingency-dsl-py; its dependencies on contingency-procedure2dsl and contingency-dsl2procedure point at GitHub tags, and the third-party libraries come from PyPI:
 
 ```bash
-G=git+https://github.com/OperantKit
-pip install --no-deps $G/contingency-dsl-e2e-roundtrip $G/contingency-dsl-py \
-  $G/contingency-procedure2dsl@v0.1.0 $G/contingency-dsl2procedure@v0.1.0
-pip install pyyaml pypdf pymupdf
+# Until the PyPI release, install from GitHub together with its OperantKit dependencies.
+pip install git+https://github.com/OperantKit/contingency-dsl-py \
+            git+https://github.com/OperantKit/contingency-dsl-e2e-roundtrip
 ```
 
-pip (and `pip check`) reports a conflict: the contingency-dsl-py development build does not satisfy the declared version. It does not affect the commands below.
+pip resolves the dependencies between them, and `pip check` reports nothing.
 
 The procedure types are read from the conformance tests of [contingency-dsl](https://github.com/OperantKit/contingency-dsl), so clone it too and point `E2E_CONFORMANCE_ROOT` at its `conformance/` directory:
 
