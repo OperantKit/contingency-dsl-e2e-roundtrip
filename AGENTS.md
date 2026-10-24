@@ -31,5 +31,5 @@ Use behavior-analytic terms: *reinforcer* (not "reward"), *discriminative stimul
 
 ## Working on this repository
 
-- Python 3.11+. Create the environment with `python -m venv .venv` and `.venv/bin/python -m pip install -e ".[test]"`; set `E2E_CONFORMANCE_ROOT` to a contingency-dsl `conformance/` directory; run `.venv/bin/python -m pytest -q`.
+- Python 3.11+. Create the environment with `python -m venv .venv` and install as in the README's Development section (`pip install --no-deps -e .` plus the OperantKit dependencies from GitHub, then `pyyaml pypdf pymupdf pytest`; `.[test]` does not resolve until contingency-dsl-py is released); set `E2E_CONFORMANCE_ROOT` to a contingency-dsl `conformance/` directory; run `.venv/bin/python -m pytest -q`.
 - `README.md` (English) is canonical; keep `README.ja.md` in sync in the same commit.
