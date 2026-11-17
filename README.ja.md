@@ -2,10 +2,10 @@
 
 :gb: [English README](README.md)
 
-contingency-dsl-e2e-roundtrip は、公刊された論文の Method 節に書かれた手続きが「Method の文章 → スケジュールの式 → 生成した Method の文章 → スケジュールの式」と往復しても崩れないかを、論文 1 本ずつ確かめます。Method 節を読む OperantKit の道具（[contingency-procedure2dsl](https://github.com/OperantKit/contingency-procedure2dsl)）と書く道具（[contingency-dsl2procedure](https://github.com/OperantKit/contingency-dsl2procedure)）を開発・評価する人で、どの種類の手続きを扱えるかを知りたい人に向けたものです。[OperantKit](https://github.com/OperantKit) の中では、この 2 つのパッケージを測る仕組みを担います。
+contingency-dsl-e2e-roundtrip は、公刊された論文の Method 節に書かれた手続きが「Method の文章 → スケジュールの式 → 生成した Method の文章 → スケジュールの式」と往復しても崩れないかを、論文 1 本ずつ確かめます。Method 節を読む OperantKit の道具 ([contingency-procedure2dsl](https://github.com/OperantKit/contingency-procedure2dsl)) と書く道具 ([contingency-dsl2procedure](https://github.com/OperantKit/contingency-dsl2procedure)) を開発・評価する人で、どの種類の手続きを扱えるかを知りたい人に向けたものです。[OperantKit](https://github.com/OperantKit) の中では、この 2 つのパッケージを測る仕組みを担います。
 
 - **論文ごとに 1 つの判定を手続きの種類別に出す。** 読む側・書く側・言語を変えたとき、どの論文が PASS と FAIL の間を動いたかが分かります。
-- **途中の産物を残す**（式・生成した文章・読み直した式）。失敗をそのまま調べられます。
+- **途中の産物を残す**(式・生成した文章・読み直した式)。失敗をそのまま調べられます。
 - **往復そのものに言語モデルは要らない。** 要るのは論文を手続きの種類に振り分ける工程だけです。
 
 ## 何を比べるか
@@ -23,11 +23,11 @@ Method text T ──▶ contingency-procedure2dsl ──▶ AST₁
                                contingency-procedure2dsl ──▶ AST₂
 ```
 
-AST（抽象構文木）は、スケジュールの式をパースした形です。論文ごとに 4 つの判定を記録し、PASS は (a) だけで決めます。
+AST (抽象構文木) は、スケジュールの式をパースした形です。論文ごとに 4 つの判定を記録し、PASS は (a) だけで決めます。
 
 | キー | 判定 | 条件 |
 |---|---|---|
-| a | 2 つの AST が同じ手続きを表す | `normalize(AST₁) == normalize(AST₂)`（書く側が文章に戻さない注釈は先に除く） |
+| a | 2 つの AST が同じ手続きを表す | `normalize(AST₁) == normalize(AST₂)` (書く側が文章に戻さない注釈は先に除く) |
 | b | 生成した文章をもう一度読める | `AST₂` が空でない |
 | c | T と P の語の重なり | 小文字にした語の Jaccard 類似度。報告するだけ |
 | d | 2 つの AST の書き方が同一 | `canonical_json(AST₁) == canonical_json(AST₂)` |
@@ -82,7 +82,7 @@ cat demo/corpus/generated/compiled/10.0000_demo.txt   # Responses were reinforce
 | `e2e classify-prepare`、`next-batch`、`ingest-batch`、`classify-ingest`、`regenerate-agent` | API キーなしで、Claude Code のサブエージェントを通して分類する |
 | `e2e second-rate`、`agreement` | 標本を 2 人目の評定者で分類し、手続きの種類ごとに Cohen の κ を出す |
 
-`--corpus <dir>`（コマンドの前に置く）で `corpus/` 以外のコーパスを扱えます。分類とそのバックエンド・信頼性は [docs/ja/classification.md](docs/ja/classification.md) で説明しています。
+`--corpus <dir>` (コマンドの前に置く) で `corpus/` 以外のコーパスを扱えます。分類とそのバックエンド・信頼性は [docs/ja/classification.md](docs/ja/classification.md) で説明しています。
 
 ## ファイル
 
@@ -90,22 +90,22 @@ cat demo/corpus/generated/compiled/10.0000_demo.txt   # Responses were reinforce
 |---|---|---|
 | `corpus/state.json` | する | DOI ごとの手続きの種類と往復の結果 |
 | `corpus/doi-lists/*.md` | する | 手続きの種類ごとの一覧。DOI 1 つにつき判定付きの 1 行。[`index.md`](corpus/doi-lists/index.md) に件数 |
-| `corpus/extracted/<slug>.txt` | しない | DOI ごとの Method の文章（`<slug>` は DOI の `/` を `_` に置き換えたもの）。ファイルがあれば抽出は飛ばす |
+| `corpus/extracted/<slug>.txt` | しない | DOI ごとの Method の文章 (`<slug>` は DOI の `/` を `_` に置き換えたもの)。ファイルがあれば抽出は飛ばす |
 | `corpus/generated/{dsl,compiled,dsl2}/` | しない | 式にした AST₁、生成した文章 P、式にした AST₂。式に書けない AST はコメント付きの JSON で保存する |
 
-追跡しているコーパスには 580 の DOI があり、そのうち 39 が範囲外と分類されています（`corpus/state.json` で数えた値）。その元になった論文の本文は配布していないので、clone した直後の `corpus/extracted/` は空です。例のように Method の文章を自分で用意してください。
+追跡しているコーパスには 580 の DOI があり、そのうち 39 が範囲外と分類されています (`corpus/state.json` で数えた値)。その元になった論文の本文は配布していないので、clone した直後の `corpus/extracted/` は空です。例のように Method の文章を自分で用意してください。
 
 | 変数 | 必須 | 意味 |
 |---|---|---|
 | `E2E_CONFORMANCE_ROOT` | はい | contingency-dsl の `conformance/` ディレクトリ。未設定なら、この checkout の隣の `../contingency-dsl/conformance` を使う |
-| `E2E_PAPER_SOURCES_ROOT` | いいえ | 手元にある論文の写しのディレクトリ。キャッシュが無いときに読む（構成は [docs/ja/classification.md](docs/ja/classification.md) の最後の節） |
+| `E2E_PAPER_SOURCES_ROOT` | いいえ | 手元にある論文の写しのディレクトリ。キャッシュが無いときに読む (構成は [docs/ja/classification.md](docs/ja/classification.md) の最後の節) |
 | `E2E_CLASSIFIER_BACKEND` | いいえ | 分類のバックエンドを `anthropic` か `claude-cli` に固定する |
 
 ## 制限
 
 - PASS は、読む側と書く側が互いに一致したという意味で、式が著者の実際の手続きと一致したという意味ではありません。両方の向きで同じ細部が落ちることがあります。
 - 類似度 (c) は語の重なりの指標で、PASS には使いません。生成した文章はスケジュールしか述べないので値は低く、`corpus/state.json` で値のある 419 本の中央値は 0.017 です。
-- 測っているのは、固定した contingency-procedure2dsl と contingency-dsl2procedure のタグ（`v0.1.0`）です。それより新しい版は、自分で入れない限りここでは試されません。
+- 測っているのは、固定した contingency-procedure2dsl と contingency-dsl2procedure のタグ (`v0.1.0`) です。それより新しい版は、自分で入れない限りここでは試されません。
 - 手続きの種類は言語モデルが付けたもので、その信頼性は 2 つのモデルの間で測ったものです。人の評定者とは比べていません。
 
 ## AI のコーディングエージェント向け
